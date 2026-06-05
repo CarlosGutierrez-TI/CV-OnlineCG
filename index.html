@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Carlos Gutierrez | DigiNucleo</title>
+    <!-- Google Fonts -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet">
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config injected directly from prompt requirements -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ddb7ff",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "surface-container-lowest": "#110c15",
+                        "on-background": "#eadfed",
+                        "surface-tint": "#ddb7ff",
+                        "surface-container": "#231e27",
+                        "background": "#16111b",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "secondary-container": "#0566d9",
+                        "surface-bright": "#3d3741",
+                        "on-tertiary-fixed": "#281900",
+                        "inverse-on-surface": "#342e38",
+                        "on-error": "#690005",
+                        "on-primary": "#490080",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#39323d",
+                        "on-surface": "#eadfed",
+                        "tertiary-fixed-dim": "#fabc4e",
+                        "tertiary-container": "#bd871a",
+                        "tertiary-fixed": "#ffdead",
+                        "primary-fixed": "#f0dbff",
+                        "success-emerald": "#10B981",
+                        "outline-variant": "#4d4354",
+                        "neon-magenta": "#ff00ff",
+                        "primary-container": "#b76dff",
+                        "secondary-fixed": "#d8e2ff",
+                        "secondary": "#adc6ff",
+                        "on-surface-variant": "#cfc2d6",
+                        "on-secondary-container": "#e6ecff",
+                        "inverse-surface": "#eadfed",
+                        "inverse-primary": "#842bd2",
+                        "surface-variant": "#39323d",
+                        "on-secondary-fixed": "#001a42",
+                        "tertiary": "#fabc4e",
+                        "on-primary-fixed-variant": "#6900b3",
+                        "on-tertiary": "#432c00",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004395",
+                        "surface-container-high": "#2e2832",
+                        "outline": "#988d9f",
+                        "on-secondary": "#002e6a",
+                        "surface": "#16111b",
+                        "surface-dim": "#16111b",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "neon-cyan": "#00f3ff",
+                        "on-tertiary-container": "#3a2600",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "on-primary-fixed": "#2c0051",
+                        "surface-container-low": "#1f1a23",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#400071"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1200px"
+                    },
+                    fontFamily: {
+                        "sans": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-xl": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-mono": ["JetBrains Mono", "monospace"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
+                        "body-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-lg": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-xl": ["48px", {
+                            "lineHeight": "56px",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "700"
+                        }],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    },
+                    animation: {
+                        'float': 'float 10s infinite',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': {transform: 'translateY(0)'},
+                            '50%': {transform: 'translateY(-20px)'},
+                        },
+                        slideUp: {
+                            '0%': {opacity: '0', transform: 'translateY(40px)'},
+                            '100%': {opacity: '1', transform: 'translateY(0)'},
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #16111b;
+            background-image: radial-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        @media (max-width: 991px) {
+            #inicio { min-height: auto !important; }
+            #inicio .flex-1:last-child { display: none !important; }
+        }
+    </style>
+    <meta name="description"
+          content="Carlos Gutierrez - Especialista TI, Desarrollador FullStack y Estratega Digital. Soluciones tecnológicas, hardware de alto rendimiento y marketing para PYMES.">
+    <meta property="og:title" content="DigiNucleo | Carlos Gutierrez">
+    <meta property="og:description"
+          content="Optimizamos tu infraestructura digital a nivel molecular. Soporte TI, Desarrollo Web y Marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+
+<body class="bg-background text-on-background antialiased selection:bg-neon-cyan/30 selection:text-neon-cyan relative">
+<!-- Floating Particles -->
+<div class="particle w-32 h-32 top-[10%] left-[5%] animate-float" style="animation-delay: 0s;"></div>
+<div class="particle w-48 h-48 top-[40%] right-[10%] animate-float bg-[radial-gradient(circle,rgba(255,0,255,0.5)_0%,rgba(255,0,255,0)_70%)]"
+     style="animation-delay: 2s;"></div>
+<div class="particle w-24 h-24 bottom-[20%] left-[20%] animate-float" style="animation-delay: 4s;"></div>
+<!-- TopNavBar -->
+<!-- TopNavBar Bootstrap -->
+<nav class="navbar navbar-expand-lg fixed-top" style="background:rgba(21,17,27,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.1);box-shadow:0 0 20px rgba(0,243,255,0.1);z-index:1030;">
+    <div class="container-fluid px-4 px-md-5">
+
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" style="text-decoration:none;">
+            <img alt="DigiNucleo Logo" height="40" style="border-radius:6px;box-shadow:0 0 10px rgba(0,243,255,0.2);"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTbc-lMaN-YO8zwINn0dYOxCSxj8ZyiDLixpKDAdZy6tvKQuVB1XsQTybREKzH50-bUVGEtyApZiqtjMO3GjNb1rak0JV2lbH3hu-AzE6WFZ0vkjnW-fUo6AnxaZFzG6JAv9GsOHEqTCF_KdZZxOxHA4CA_-zE5oPI1KS1a9k-Oo_-wD7aAWovFDmoGkExyNMN6O36NkBv-dxv5cr8WdRSFhD-VktGO4ei9giCTUMqvf9hKMCcoLIwnIn4M5mdZIgHFp2egSx-Q">
+            <span class="d-none d-md-block" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:600;background:linear-gradient(to right,#ddb7ff,#00f3ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Carlos Gutiérrez</span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Abrir menú">
+            <span style="font-family:'Material Symbols Outlined';font-size:28px;color:#00f3ff;">menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mx-auto gap-1" style="font-family:'JetBrains Mono',monospace;font-size:14px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" style="color:#cfc2d6;" onmouseover="this.style.color='#00f3ff'" onmouseout="this.style.color='#cfc2d6'">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#quien-soy" style="color:#cfc2d6;" onmouseover="this.style.color='#00f3ff'" onmouseout="this.style.color='#cfc2d6'">Quién Soy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#formacion" style="color:#cfc2d6;" onmouseover="this.style.color='#00f3ff'" onmouseout="this.style.color='#cfc2d6'">Formación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#experiencia" style="color:#cfc2d6;" onmouseover="this.style.color='#00f3ff'" onmouseout="this.style.color='#cfc2d6'">Experiencia</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="index.html#portafolio" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false" style="color:#cfc2d6;">Servicios</a>
+                    <ul class="dropdown-menu" style="background:rgba(35,30,39,0.97);border:1px solid rgba(255,255,255,0.1);border-radius:12px;">
+                        <li><a class="dropdown-item" href="soporte-tecnico-y-mantenimiento.html" style="color:#cfc2d6;font-family:'JetBrains Mono',monospace;font-size:13px;" onmouseover="this.style.color='#00f3ff';this.style.background='rgba(0,243,255,0.08)'" onmouseout="this.style.color='#cfc2d6';this.style.background='transparent'">🔧 Soporte Técnico</a></li>
+                        <li><a class="dropdown-item" href="alto-rendimiento.html" style="color:#cfc2d6;font-family:'JetBrains Mono',monospace;font-size:13px;" onmouseover="this.style.color='#39FF14';this.style.background='rgba(57,255,20,0.08)'" onmouseout="this.style.color='#cfc2d6';this.style.background='transparent'">🎮 Alto Rendimiento</a></li>
+                        <li><a class="dropdown-item" href="digitalizacion-marketing.html" style="color:#cfc2d6;font-family:'JetBrains Mono',monospace;font-size:13px;" onmouseover="this.style.color='#ff00ff';this.style.background='rgba(255,0,255,0.08)'" onmouseout="this.style.color='#cfc2d6';this.style.background='transparent'">🛒 Marketing PYMES</a></li>
+                        <li><a class="dropdown-item" href="rrss-contenido.html" style="color:#cfc2d6;font-family:'JetBrains Mono',monospace;font-size:13px;" onmouseover="this.style.color='#FFD700';this.style.background='rgba(255,215,0,0.08)'" onmouseout="this.style.color='#cfc2d6';this.style.background='transparent'">📱 Redes Sociales</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contacto-new" style="color:#cfc2d6;" onmouseover="this.style.color='#00f3ff'" onmouseout="this.style.color='#cfc2d6'">Contacto</a>
+                </li>
+            </ul>
+
+            <a href="static/CV_Carlos_Gutierrez_Toledo_2026.pdf" download="CV_Carlos_Gutierrez.pdf" target="_blank"
+               class="d-none d-md-flex align-items-center gap-2 ms-3"
+               style="padding:8px 20px;border:1px solid rgba(255,255,255,0.1);background:rgba(44,41,45,0.5);color:#eadfed;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;border-radius:8px;text-decoration:none;white-space:nowrap;"
+               onmouseover="this.style.color='#00f3ff';this.style.borderColor='rgba(0,243,255,0.5)'"
+               onmouseout="this.style.color='#eadfed';this.style.borderColor='rgba(255,255,255,0.1)'">
+                <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">download</span> Descargar CV
+            </a>
+        </div>
+    </div>
+</nav>
+<main class="w-full flex flex-col items-center">
+    <!-- HERO SECTION -->
+    <section
+            class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-32 flex flex-col lg:flex-row items-center gap-12 min-h-[819px] animate-slide-up"
+            id="inicio">
+
+        <div class="flex-1 flex flex-col items-start gap-6 relative z-10">
+
+            <!-- Etiqueta Superior Táctica -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-glass-border rounded-full shadow-[0_0_10px_rgba(0,243,255,0.1)]">
+                <span class="material-symbols-outlined text-neon-cyan text-[16px]">memory</span>
+                <span class="font-label-mono text-label-mono text-on-surface-variant">Productividad IA & Estrategia Top-Down</span>
+            </div>
+
+            <!-- RESTAURACIÓN CRÍTICA: Nombre del Admin (H1) -->
+            <h1 class="font-headline-xl text-headline-xl text-on-background leading-tight">
+                Carlos Antonio <br><span class="gradient-text">Gutierrez Toledo</span>
+            </h1>
+
+            <!-- BLOQUE DINÁMICO: Títulos de Cargo (Escaneabilidad 1 segundo) -->
+            <div class="flex flex-col gap-2 border-l-4 border-neon-cyan pl-5 py-2 mt-2">
+                <h2 class="font-headline-lg-mobile text-[26px] md:text-[32px] font-bold text-on-background leading-none">
+                    Especialista en <span class="text-neon-cyan glow-text-cyan">Soporte TI</span>
+                </h2>
+                <h2 class="font-headline-lg-mobile text-[26px] md:text-[32px] font-bold text-on-background leading-none">
+                    Desarrollador <span class="text-primary glow-text-primary">Full Stack JS</span> <span
+                        class="text-[14px] text-on-surface-variant font-normal tracking-widest uppercase align-middle bg-surface-bright px-2 py-1 rounded ml-2">(Trainee)</span>
+                </h2>
+                <h2 class="font-headline-lg-mobile text-[26px] md:text-[32px] font-bold text-on-background leading-none">
+                    <span class="text-neon-magenta glow-text-magenta">Estratega Digital</span>
+                </h2>
+            </div>
+
+            <!-- HOOK FRONTAL: Directo y sin relleno -->
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mt-2">
+                Arquitecto de soluciones tecnológicas. Diagnostico y erradico cuellos de botella operativos cruzando
+                diferentes dominios: la física del hardware, la seguridad perimetral de redes y la lógica del código
+                backend.
+            </p>
+
+            <!-- MATRIZ DE TAGS: Reemplaza las listas aburridas -->
+            <div class="flex flex-wrap gap-3 mt-4">
+                <span class="px-3 py-1.5 bg-surface-container-high/80 border border-neon-cyan/40 rounded text-[13px] font-label-mono text-neon-cyan shadow-[0_0_10px_rgba(6,182,212,0.15)] hover:bg-neon-cyan/10 transition-colors cursor-default">Hardware & Redes</span>
+                <span class="px-3 py-1.5 bg-surface-container-high/80 border border-primary/40 rounded text-[13px] font-label-mono text-primary shadow-[0_0_10px_rgba(221,183,255,0.15)] hover:bg-primary/10 transition-colors cursor-default">Workspace & DMARC</span>
+                <span class="px-3 py-1.5 bg-surface-container-high/80 border border-neon-magenta/40 rounded text-[13px] font-label-mono text-neon-magenta shadow-[0_0_10px_rgba(217,70,239,0.15)] hover:bg-neon-magenta/10 transition-colors cursor-default">Marketing & IA Gemini</span>
+                <span class="px-3 py-1.5 bg-surface-container-high/80 border border-neon-cyan/40 rounded text-[13px] font-label-mono text-neon-cyan shadow-[0_0_10px_rgba(6,182,212,0.15)] hover:bg-neon-cyan/10 transition-colors cursor-default">Node.js & SQL</span>
+            </div>
+
+            <!-- ACCIÓN TÁCTICA -->
+            <div class="flex gap-4 mt-6">
+                <a class="px-6 py-3 bg-gradient-to-r from-neon-cyan/80 to-neon-magenta/80 text-white font-label-mono text-label-mono font-bold rounded hover:from-neon-cyan hover:to-neon-magenta shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all duration-300 flex items-center gap-2"
+                   href="#experiencia">
+                    Ver Experiencia Operativa
+                    <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Hero Abstract Visual (Tu imagen preservada intacta) -->
+        <div class="flex-1 w-full flex justify-center items-center relative">
+            <div class="relative w-full max-w-[320px] aspect-[9/16] bg-surface-container/40 backdrop-blur-md border border-glass-border rounded-xl overflow-hidden glow-hover transition-all duration-500 group">
+                <div class="absolute inset-0 p-[1px] bg-gradient-to-br from-neon-cyan via-neon-magenta to-primary opacity-30 group-hover:opacity-60 transition-opacity duration-500 rounded-xl"></div>
+                <div class="absolute inset-[1px] bg-surface-container/90 rounded-[11px] overflow-hidden">
+                    <img alt="Carlos Gutierrez"
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmRCBcaRc2G6w1i0yPqzxU0cPWpNUPcvyUuDUK23c4tZJ5BIAj9TP9cjdW2lRCl01bEmsfP3KiITNYID4GoanhheL-GCHIb3xMvypXqadBTP5CS9ubpUKUlg8Yogp7NrMriXyrs02acBpY8VC3bJ5GtjSIV3PoQErPP9H-sNu3fsqqg37Ol-cDP8v8iX05bd1_EmoLWw8eVz1NhPcr7YpDQwHI3bWydsX0AHAmH_9X6a9kNIzJb1u8k1cAfeaHXEk5AiRToOenA">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <div class="h-[2px] w-12 bg-neon-cyan shadow-[0_0_10px_#00f3ff] mb-2"></div>
+                        <p class="font-label-mono text-[10px] text-neon-cyan uppercase tracking-widest"><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- QUIÉN SOY -->
+    <section class="section-wrapper animate-on-scroll is-visible pt-8 pb-20" id="quien-soy">
+
+        <!-- HEADER DE SECCIÓN (Uso de clases nativas styles.css) -->
+        <div class="section-header">
+            <span class="section-header__number text-neon-cyan">1.</span>
+            <h2 class="section-header__title">Quién Soy</h2>
+            <div class="section-header__line section-header__line--cyan"></div>
+        </div>
+
+        <!-- GRID ASIMÉTRICO: 12 Columnas Desktop -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-4">
+
+            <!-- COLUMNA 1: TRIDENTE OPERATIVO (Span 5) -->
+            <div class="lg:col-span-5 flex flex-col relative h-full">
+
+                <!-- Tarjeta Principal con decoradores Cyber-Noir -->
+                <div class="glass-card p-8 h-full flex flex-col gap-6 relative overflow-hidden group glow-accent">
+                    <!-- Esquinas de Neón -->
+                    <div class="form-corner-cyan"></div>
+                    <!-- Resplandor de fondo sutil -->
+                    <div class="absolute -right-20 -top-20 w-48 h-48 bg-neon-cyan/10 blur-[50px] rounded-full group-hover:bg-neon-cyan/20 transition-all duration-700"></div>
+
+                    <!-- NUEVO TÍTULO: TRIDENTE OPERATIVO -->
+                    <h3 class="font-label-mono text-neon-cyan uppercase tracking-widest text-[14px] flex items-center gap-3 relative z-10">
+                        <span class="pulse-dot"></span> Tridente Operativo
+                    </h3>
+
+                    <!-- NUEVO TEXTO: ENFOQUE MULTIDOMINIO SIN ALUCINACIONES -->
+                    <p class="font-body-lg text-[16px] text-on-surface-variant leading-relaxed relative z-10">
+                        Mi metodología anula el soporte reactivo tradicional. Opero bajo un análisis <strong
+                            class="text-on-background font-medium">Top-Down</strong>: audito la infraestructura,
+                        identifico la vulnerabilidad raíz y ejecuto soluciones definitivas.
+                        <br><br>
+                        Esta capacidad resolutiva se despliega a través de un <strong
+                            class="text-neon-cyan font-medium">tridente ofensivo</strong>: el control físico del
+                        hardware, la administración de sistemas (OS/Cloud), y mi inmersión táctica en el desarrollo de
+                        software. Este multidominio —en fase de actualización y expansión continua— me permite adaptar
+                        soluciones precisas y controlar el ciclo de vida completo del problema tecnológico.
+                    </p>
+
+                    <!-- Anclaje Académico en tiempo real -->
+                    <div class="mt-auto pt-6 border-t border-glass-border relative z-10">
+                        <span class="status-badge">
+                            <span class="material-symbols-outlined text-[18px] text-primary">school</span>
+                            Full Stack JS Trainee (SENCE)
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA 2: DESPLIEGUE OPERATIVO DIGINÚCLEO (Span 7) -->
+            <div class="lg:col-span-7 flex flex-col gap-5">
+
+                <h3 class="font-label-mono text-neon-magenta uppercase tracking-widest text-[14px] flex items-center gap-3 mb-2 ml-2">
+                    <span class="w-1.5 h-1.5 bg-neon-magenta rounded-full shadow-[0_0_5px_#ff00ff]"></span>
+                    Despliegue Operativo (DigiNúcleo)
+                </h3>
+
+                <!-- Tarjeta Horizontal 1: Soporte Clásico -->
+                <div class="glass-card p-6 flex flex-col sm:flex-row gap-6 items-start glow-hover cursor-default">
+                    <div class="w-14 h-14 shrink-0 rounded-lg bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.15)] relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 to-transparent"></div>
+                        <span class="material-symbols-outlined text-neon-cyan text-[28px] relative z-10">build_circle</span>
+                    </div>
+                    <div class="flex flex-col gap-2 pt-1">
+                        <strong class="text-on-background text-[18px] tracking-wide">Soporte TI Base</strong>
+                        <p class="text-[15px] text-on-surface-variant leading-relaxed">
+                            Resolución crítica para el hogar y la oficina. Ejecuto instalaciones limpias de SO, upgrades
+                            estructurales (HDD a SSD), reemplazo de pantallas y mantenimiento físico preventivo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Horizontal 2: Alto Rendimiento -->
+                <div class="glass-card p-6 flex flex-col sm:flex-row gap-6 items-start glow-hover cursor-default">
+                    <div class="w-14 h-14 shrink-0 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shadow-[0_0_15px_rgba(221,183,255,0.15)] relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+                        <span class="material-symbols-outlined text-primary text-[28px] relative z-10">memory</span>
+                    </div>
+                    <div class="flex flex-col gap-2 pt-1">
+                        <strong class="text-on-background text-[18px] tracking-wide">Alto Rendimiento</strong>
+                        <p class="text-[15px] text-on-surface-variant leading-relaxed">
+                            Auditorías térmicas profundas, aplicación de compuestos (Arctic MX-4), mitigación de cuellos
+                            de botella y optimización de latencia de red para setups orientados a Gamers y Creadores de
+                            Contenido.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Horizontal 3: Digitalización PYME -->
+                <div class="glass-card p-6 flex flex-col sm:flex-row gap-6 items-start glow-hover cursor-default">
+                    <div class="w-14 h-14 shrink-0 rounded-lg bg-neon-magenta/10 border border-neon-magenta/30 flex items-center justify-center shadow-[0_0_15px_rgba(217,70,239,0.15)] relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-neon-magenta/20 to-transparent"></div>
+                        <span class="material-symbols-outlined text-neon-magenta text-[28px] relative z-10">public</span>
+                    </div>
+                    <div class="flex flex-col gap-2 pt-1">
+                        <strong class="text-on-background text-[18px] tracking-wide">Digitalización PYME</strong>
+                        <p class="text-[15px] text-on-surface-variant leading-relaxed">
+                            Dominio de ecosistemas web (WordPress) y posicionamiento orgánico local (SEO / Google
+                            Business Profile) para garantizar la tracción comercial y autoridad digital de clientes.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- FORMACIÓN -->
+    <section
+            class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col gap-10 relative animate-on-scroll is-visible"
+            id="formacion">
+        <div class="flex items-center gap-4">
+            <span class="font-label-mono text-label-mono text-primary">2.</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-background">Formación</h2>
+            <div class="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-neon-cyan/50 relative">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-neon-cyan rounded-full shadow-[0_0_8px_#00f3ff]"></div>
+            </div>
+        </div>
+        <div class="bg-surface-container/50 backdrop-blur-[12px] border border-glass-border rounded-xl p-8 md:p-12 glow-hover transition-all duration-300">
+            <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-8">Educación Académica y
+                Cursos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Item 1 -->
+                <div class="bg-surface-container-high/30 p-6 rounded-xl border border-glass-border hover:border-neon-cyan/50 transition-colors">
+                    <h4 class="font-label-mono text-label-mono text-neon-cyan mb-3 flex items-center gap-2"><span
+                            class="material-symbols-outlined text-[20px]">school</span> Ingeniería en Informática</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Estudiante en curso (UTEM).
+                        Mantenimiento de conocimientos técnicos actualizados en desarrollo, sistemas y resolución de
+                        problemas.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-surface-container-high/30 p-6 rounded-xl border border-glass-border hover:border-primary/50 transition-colors">
+                    <h4 class="font-label-mono text-label-mono text-primary mb-3 flex items-center gap-2"><span
+                            class="material-symbols-outlined text-[20px]">verified</span> Soporte TI y Redes</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Certificado Profesional de Soporte de
+                        TI de Google. Diagnóstico, reparación de equipos, configuración de redes locales y armado/mejora
+                        de hardware.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="bg-surface-container-high/30 p-6 rounded-xl border border-glass-border hover:border-neon-magenta/50 transition-colors">
+                    <h4 class="font-label-mono text-label-mono text-neon-magenta mb-3 flex items-center gap-2"><span
+                            class="material-symbols-outlined text-[20px]">psychology</span> IA Aplicada al Trabajo</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Certificaciones de Google en IA (Prompt
+                        Engineering con Gemini). Automatización de tareas repetitivas, creación de manuales y
+                        optimización de tiempo.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="bg-surface-container-high/30 p-6 rounded-xl border border-glass-border hover:border-[#ff0080]/50 transition-colors">
+                    <h4 class="font-label-mono text-label-mono text-[#ff0080] mb-3 flex items-center gap-2"><span
+                            class="material-symbols-outlined text-[20px]">campaign</span> Marketing, Ventas y RRSS</h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Diplomado en Marketing Digital
+                        (AIEP/SENCE), Certificación Google Ads, E-Commerce (U. de Chile) y Redes Sociales (Tec de
+                        Monterrey).</p>
+                </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-glass-border flex flex-row justify-center items-start gap-8 md:gap-12 flex-wrap">
+
+                <div class="flex flex-col items-center gap-2 w-28">
+                    <a href="https://www.credly.com/badges/1d3df9e6-8b72-431b-aab2-57698cab1910/public_url"
+                       target="_blank"
+                       class="w-28 h-28 rounded border border-glass-border bg-surface-container-high/30 p-3 flex items-center justify-center hover:border-neon-cyan/50 hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                        <img src="static/assets/img/google-it-support-certificate.2.png"
+                             alt="Google IT Support"
+                             class="w-full h-full object-contain">
+                    </a>
+                    <span class="font-label-mono text-[11px] text-neon-cyan uppercase tracking-wider text-center mt-1">Google IT Support</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-28">
+                    <a href="https://drive.google.com/file/d/1HnSrGIfk5nN4kSKBvNgkg7xTY6utSyiq/view"
+                       target="_blank"
+                       class="w-28 h-28 rounded border border-glass-border bg-surface-container-high/30 p-3 flex items-center justify-center hover:border-neon-magenta/50 hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                        <img src="static/assets/img/Logo_AIEP.png"
+                             alt="Diplomado Marketing"
+                             class="w-full h-full object-contain">
+                    </a>
+                    <span class="font-label-mono text-[11px] text-neon-magenta uppercase tracking-wider text-center mt-1">Diplomado Marketing</span>
+                </div>
+
+            </div>
+    </section>
+    <!-- EXPERIENCIA LABORAL -->
+    <section
+            class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col gap-10 relative animate-on-scroll is-visible"
+            id="experiencia">
+        <div class="flex items-center gap-4">
+            <span class="font-label-mono text-label-mono text-neon-magenta">3.</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-background">Experiencia Laboral</h2>
+            <div class="h-[1px] flex-1 bg-gradient-to-r from-neon-magenta/50 to-neon-cyan/50 relative">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-neon-cyan rounded-full shadow-[0_0_8px_#00f3ff]"></div>
+            </div>
+        </div>
+        <div class="relative pl-8 md:pl-0 mt-8">
+            <!-- Vertical Timeline Line -->
+            <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-glass-border transform md:-translate-x-1/2">
+                <div class="w-full h-1/3 timeline-line shadow-[0_0_10px_#00f3ff]"></div>
+            </div>
+            <!-- Job 1 -->
+            <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 w-full animate-on-scroll is-visible">
+                <div class="absolute left-[-37px] md:left-1/2 w-4 h-4 rounded-full bg-neon-cyan transform md:-translate-x-1/2 shadow-[0_0_15px_#00f3ff] z-10"></div>
+                <div class="w-full md:w-[45%] md:pr-8 mb-4 md:mb-0 text-left md:text-right">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">DANTECHNIQUE SPA /
+                        DANAIR</h3>
+                    <p class="font-label-mono text-label-mono text-neon-cyan mb-2">Consultor TI &amp; Gestión Web |
+                        2025- 2026</p>
+                </div>
+                <div class="w-full md:w-[45%] md:pl-8">
+                    <div class="bg-surface-container/50 backdrop-blur-[12px] border border-glass-border rounded-xl p-6 glow-hover transition-all duration-300">
+                        <ul class="font-body-md text-body-md text-on-surface-variant list-none space-y-2">
+                            <li class="flex gap-2"><span class="text-neon-cyan">▹</span> Implementación y administración
+                                de equipos ChromeBoxs y ecosistema de Google Workspace.
+                            </li>
+                            <li class="flex gap-2"><span class="text-neon-cyan">▹</span> Gestión y actualización de
+                                páginas web basadas en wordpress; optimización básica (SEO).
+                            </li>
+                            <li class="flex gap-2"><span class="text-neon-cyan">▹</span> Creación de manuales técnicos y
+                                cotizaciones formales utilizando IA.
+                                <div>
+                                    <div>
+                                        <div><br></div>
+                                        <div><br></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2 py-1 bg-surface-bright border border-neon-cyan/30 rounded text-[12px] font-label-mono text-neon-cyan shadow-[0_0_5px_rgba(0,243,255,0.1)]">Workspace</span>
+                            <span class="px-2 py-1 bg-surface-bright border border-neon-magenta/30 rounded text-[12px] font-label-mono text-neon-magenta shadow-[0_0_5px_rgba(255,0,255,0.1)]">IA Gemini</span>
+                            <span class="px-2 py-1 bg-surface-bright border border-neon-cyan/30 rounded text-[12px] font-label-mono text-neon-cyan shadow-[0_0_5px_rgba(0,243,255,0.1)]">WordPress</span>
+                            <span class="px-2 py-1 bg-surface-bright border border-neon-magenta/30 rounded text-[12px] font-label-mono text-neon-magenta shadow-[0_0_5px_rgba(255,0,255,0.1)]">Seguridad de Correo (DMARC, SPF, DKIM)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Job 2 -->
+            <div class="relative flex flex-col md:flex-row-reverse items-center justify-between mb-16 w-full animate-on-scroll is-visible">
+                <div class="absolute left-[-37px] md:left-1/2 w-4 h-4 rounded-full bg-surface-container border-2 border-neon-magenta transform md:-translate-x-1/2 z-10 shadow-[0_0_10px_rgba(255,0,255,0.5)]"></div>
+                <div class="w-full md:w-[45%] md:pl-8 mb-4 md:mb-0 text-left">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">MERCADO LIBRE</h3>
+                    <p class="font-label-mono text-label-mono text-neon-magenta mb-2">Representante de Envío | Nov 2024
+                        - Feb 2025</p>
+                </div>
+                <div class="w-full md:w-[45%] md:pr-8 text-left md:text-right">
+                    <div class="bg-surface-container/50 backdrop-blur-[12px] border border-glass-border rounded-xl p-6 glow-hover transition-all duration-300">
+                        <ul class="font-body-md text-body-md text-on-surface-variant list-none space-y-2">
+                            <li class="flex gap-2 md:justify-end"><span class="text-neon-magenta md:hidden">▹</span>
+                                Recepción, clasificación y despacho de paquetes, preparación de pedidos. <span
+                                        class="text-neon-magenta hidden md:inline">◂</span></li>
+                            <li class="flex gap-2 md:justify-end"><span class="text-neon-magenta md:hidden">▹</span> Uso
+                                avanzado de Terminales de Radiofrecuencia (pistolas RF). <span
+                                        class="text-neon-magenta hidden md:inline">◂</span></li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2 py-1 bg-surface-bright border border-neon-cyan/30 rounded text-[12px] font-label-mono text-neon-cyan shadow-[0_0_5px_rgba(0,243,255,0.1)]">Aplicación de KPIs</span>
+                            <span class="px-2 py-1 bg-surface-bright border border-neon-magenta/30 rounded text-[12px] font-label-mono text-neon-magenta shadow-[0_0_5px_rgba(255,0,255,0.1)]">Método de las 5s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Job 3 -->
+            <div class="relative flex flex-col md:flex-row items-center justify-between w-full animate-on-scroll is-visible">
+                <div class="absolute left-[-37px] md:left-1/2 w-4 h-4 rounded-full bg-surface-container border-2 border-primary transform md:-translate-x-1/2 z-10 shadow-[0_0_10px_rgba(221,183,255,0.5)]"></div>
+                <div class="w-full md:w-[45%] md:pr-8 mb-4 md:mb-0 text-left md:text-right">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">HOTEL MARRIOTT / H&amp;M</h3>
+                    <p class="font-label-mono text-label-mono text-primary mb-2">Servicio y Atención al Cliente |
+                        2023-2024</p>
+                </div>
+                <div class="w-full md:w-[45%] md:pl-8">
+                    <div class="bg-surface-container/50 backdrop-blur-[12px] border border-glass-border rounded-xl p-6 glow-hover transition-all duration-300">
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Experiencia sólida en atención directa en entornos de alta exigencia (Guest Environment
+                            Expert en Hotel Marriott, Sales Advisor en H&amp;M), desarrollando habilidades de
+                            comunicación, trabajo bajo presión y resolución rápida de requerimientos de clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PORTAFOLIO DIGINUCLEO -->
+    <section
+            class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col gap-10 animate-on-scroll is-visible"
+            id="competencias">
+        <div class="flex items-center gap-4"><span class="font-label-mono text-label-mono text-neon-cyan">4.</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-background">Competencias y Aptitudes</h2>
+            <div class="h-[1px] flex-1 bg-gradient-to-r from-neon-cyan/50 to-neon-magenta/50 relative">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-neon-magenta rounded-full shadow-[0_0_8px_#ff00ff]"></div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container/50 backdrop-blur-[12px] border border-glass-border rounded-xl p-8 glow-hover transition-all duration-300">
+                <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-neon-cyan">terminal</span> Competencias Técnicas TI</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 font-body-md text-on-surface-variant"><span
+                            class="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_5px_#00f3ff]"></span> Diagnóstico y
+                        Soporte de Hardware
+                    </li>
+                    <li class="flex items-center gap-3 font-body-md text-on-surface-variant"><span
+                            class="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_5px_#00f3ff]"></span> Optimización
+                        de Equipos Informaticos y flujos de trabajo
+                    </li>
+                    <li class="flex items-center gap-3 font-body-md text-on-surface-variant"><span
+                            class="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_5px_#00f3ff]"></span>
+                        Administración de Sistemas
+                    </li>
+                    <li class="flex items-center gap-3 font-body-md text-on-surface-variant"><span
+                            class="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_5px_#00f3ff]"></span>Asesoría
+                        Personalizada y acompañamiento
+                    </li>
+                    <li class="flex items-center gap-3 font-body-md text-on-surface-variant"><span
+                            class="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_5px_#00f3ff]"></span>
+                        Implementación de Soluciones en la Nube (Google Workspace)
+                    </li>
+                    <li class="flex items-center gap-3 font-body-md text-on-surface-variant"><span
+                            class="w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_5px_#00f3ff]"></span>
+                        Sistemas Operativos
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-surface-container/50 backdrop-blur-[12px] border border-glass-border rounded-xl p-8 glow-hover transition-all duration-300">
+                <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-neon-magenta">groups</span> Habilidades Interpersonales
+                </h3>
+                <div class="flex flex-wrap gap-2"><span
+                        class="px-3 py-1 bg-surface-container-high/50 border border-glass-border rounded-full font-label-mono text-[12px] text-on-surface-variant">Adaptabilidad</span><span
+                        class="px-3 py-1 bg-surface-container-high/50 border border-glass-border rounded-full font-label-mono text-[12px] text-on-surface-variant">Resolución de problemas</span><span
+                        class="px-3 py-1 bg-surface-container-high/50 border border-glass-border rounded-full font-label-mono text-[12px] text-on-surface-variant">Comunicación efectiva</span><span
+                        class="px-3 py-1 bg-surface-container-high/50 border border-glass-border rounded-full font-label-mono text-[12px] text-on-surface-variant">Capacidad de aprendizaje rápido</span><span
+                        class="px-3 py-1 bg-surface-container-high/50 border border-glass-border rounded-full font-label-mono text-[12px] text-on-surface-variant">Trabajo bajo presión</span><span
+                        class="px-3 py-1 bg-surface-container-high/50 border border-glass-border rounded-full font-label-mono text-[12px] text-on-surface-variant">Empatía y flexibilidad</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section
+            class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col gap-10 animate-on-scroll is-visible"
+            id="portafolio">
+        <div class="flex items-center gap-4">
+            <span class="font-label-mono text-label-mono gradient-text">5.</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-background">Servicios DigiNucleo</h2>
+            <div class="h-[1px] flex-1 bg-gradient-to-r from-neon-cyan/50 via-neon-magenta/50 to-transparent relative">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_8px_#ddb7ff]"></div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+            <!-- Service 1: Soporte Técnico y Mantenimiento -->
+            <a class="group relative bg-surface-container/40 backdrop-blur-[12px] border border-glass-border rounded-xl overflow-hidden flex flex-col glow-hover transition-all duration-300 cursor-pointer animate-on-scroll is-visible"
+               href="soporte-tecnico-y-mantenimiento.html">
+                <div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+                    <img alt="Soporte Técnico"
+                         class="w-full h-full object-cover absolute inset-0 opacity-60 mix-blend-screen group-hover:opacity-100 transition-opacity duration-300"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkvL1XrPdhedbK3sBDKqklql_NHOTCJDwjitadN9oYQMdM1zwWFIYMGAnpC3Bc4OjUbShzxbJvTkrbU5AkSkty8M6xvW4Cyt41PJSda6vGfFF9CZj4izt5Be5ZFdLP5Cq6mBB1wIKKsCMiPV1TAwYQrbTWO9iLNLzjrnKFLVOHiRkqj7nOJrbRpolq2OJ0hadG_gUbpHQS2do3CZFX--kwFhDgsg8P7Gy4fvZZA-PVa0MEB2PxANg5XWE-oRpkNN6dHSyGp9PJcYGg">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 to-transparent z-0 group-hover:from-neon-cyan/40 transition-all duration-300"></div>
+                    <span class="material-symbols-outlined absolute bottom-4 right-4 text-neon-cyan text-[48px] z-10 drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">build_circle</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1 border-t border-neon-cyan/20">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-2 group-hover:text-neon-cyan transition-colors">
+                        Soporte Técnico y Mantenimiento (Hogar y Oficina)</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">Instalación limpia de SO,
+                        mantenimiento físico preventivo, solución al sobrecalentamiento, upgrade de equipos lentos y
+                        resolución de redes.</p>
+                    <div class="mt-auto">
+                        <span class="font-label-mono text-label-mono text-neon-cyan uppercase tracking-wider text-[12px] bg-neon-cyan/10 px-2 py-1 rounded">Hardware &amp; so</span>
+                    </div>
+                </div>
+            </a>
+            <!-- Service 2: Alto Rendimiento -->
+            <a class="group relative bg-surface-container/40 backdrop-blur-[12px] border border-glass-border rounded-xl overflow-hidden flex flex-col glow-hover transition-all duration-300 cursor-pointer animate-on-scroll is-visible"
+               href="alto-rendimiento.html">
+                <div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+                    <img alt="Alto Rendimiento"
+                         class="w-full h-full object-cover absolute inset-0 opacity-60 mix-blend-screen group-hover:opacity-100 transition-opacity duration-300"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_kFyUIUsHGMAQe0oXKOLJQigukn_LSvb_sQgO9_mq7z9jW0w-76oljHPnB3x_1wu4l8gKOiOb-lvGJSPFa-68EvlCNiymccyjpi9NwcjeiM6AVonGtT6rtwsFBsZbFwf_74AWZC45Cg2KMUnQQAg0MY8EV2TcM7JNNS-rElKXT0rFtXtG-IsIkeIBM7TGi8VA7O4OXxcdPPfMd74Ppao3_gl2o-mvJMudoAuo5wo6nhXsBjLIjs2p8CKLtEn1COSP5z3qlh8QmVZU">
+                    <div class="absolute inset-0 bg-gradient-to-bl from-neon-magenta/20 to-transparent z-0 group-hover:from-neon-magenta/40 transition-all duration-300"></div>
+                    <span class="material-symbols-outlined absolute bottom-4 right-4 text-neon-magenta text-[48px] z-10 drop-shadow-[0_0_10px_rgba(255,0,255,0.5)]">sports_esports</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1 border-t border-neon-magenta/20">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-2 group-hover:text-neon-magenta transition-colors">
+                        Alto Rendimiento (Gamer y Creadores)</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">Optimización competitiva (FPS),
+                        networking gamer, arquitectura para streaming, mantenimiento de consolas y asesoría de
+                        armado.</p>
+                    <div class="mt-auto">
+                        <span class="font-label-mono text-label-mono text-neon-magenta uppercase tracking-wider text-[12px] bg-neon-magenta/10 px-2 py-1 rounded">maximo rendimiento y fluidez</span>
+                    </div>
+                </div>
+            </a>
+            <!-- Service 3: Digitalización y Marketing -->
+            <a class="group relative bg-surface-container/40 backdrop-blur-[12px] border border-glass-border rounded-xl overflow-hidden flex flex-col glow-hover transition-all duration-300 cursor-pointer animate-on-scroll is-visible"
+               href="digitalizacion-marketing.html">
+                <div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+                    <img alt="Digitalización y Marketing"
+                         class="w-full h-full object-cover absolute inset-0 opacity-60 mix-blend-screen group-hover:opacity-100 transition-opacity duration-300"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHjEx330Bj88Is9VTUZTyg_lFJd-QQR1XC7XgJ_7CPaact39SW5SZ6kRB9pC61k-zQT0py_ZwVhb8AL-2y1gNZd3Kc_qjADp2eicrUvkC5D25eox27ffbwLqkZvrIIQ4ffUuh1SuN2rr7MsakLy8smQqdf4FoSjWxgvM02ZAqF6mC48ssW3jYF8VMIyRGjJkP5N77pAxYmXf7Cvh97oifj7isFmVVKXTHG9q1FWxMjuXjfIM8EWXa2xAPhJwCI0yfDSPXj6_-qsZ5M">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-0 group-hover:from-primary/40 transition-all duration-300"></div>
+                    <span class="material-symbols-outlined absolute bottom-4 right-4 text-primary text-[48px] z-10 drop-shadow-[0_0_10px_rgba(221,183,255,0.5)]">storefront</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1 border-t border-primary/20">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-2 group-hover:text-primary transition-colors">
+                        Digitalización y Marketing para PYMES</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">Posicionamiento SEO Local, correos
+                        corporativos blindados, diseño web/landing pages, Google Ads y diseño comercial de alto
+                        impacto.</p>
+                    <div class="mt-auto">
+                        <span class="font-label-mono text-label-mono text-primary uppercase tracking-wider text-[12px] bg-primary/10 px-2 py-1 rounded">Crecimiento de pymes y negocios</span>
+                    </div>
+                </div>
+            </a>
+            <!-- Service 4: Gestión de Redes Sociales -->
+            <a class="group relative bg-surface-container/40 backdrop-blur-[12px] border border-glass-border rounded-xl overflow-hidden flex flex-col glow-hover transition-all duration-300 cursor-pointer animate-on-scroll is-visible"
+               href="rrss-contenido.html">
+                <div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+                    <img alt="Redes Sociales"
+                         class="w-full h-full object-cover absolute inset-0 opacity-60 mix-blend-screen group-hover:opacity-100 transition-opacity duration-300"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEiIKT_fsEMBNOXAvn4fdfDapjUPwPT8q04RQ_Ngzc6TmOuKF6Q8E2ukyWAqCAbpEwcLOkszGks9DgIl3uQRDArkTrFD1yi0r9hJBtTkAJTKXv2y3nEU3kxmuSgtMvSJA41uAt35Ib8YVVei0izfLFn14SchVoqziI4X00biAP59r1nSlaRZs_E-WFjhzJw6N-0wMNx9d0FmqbWTWBJk5QCearjtuudmFyh0OnhyonBbwnTQ1NMeXXJW5-Ot2u3meTtNzpKs8p7HAz">
+                    <div class="absolute inset-0 bg-gradient-to-tl from-[#ff0080]/20 to-transparent z-0 group-hover:from-[#ff0080]/40 transition-all duration-300"></div>
+                    <span class="material-symbols-outlined absolute bottom-4 right-4 text-[#ff0080] text-[48px] z-10 drop-shadow-[0_0_10px_rgba(255,0,128,0.5)]">share</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1 border-t border-[#ff0080]/20">
+                    <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-2 group-hover:text-[#ff0080] transition-colors">
+                        Gestión de Redes Sociales y Contenido</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">Estrategia audiovisual
+                        (Reels/TikToks), community management, modelos de retención mensual y diseño gráfico
+                        comercial.</p>
+                    <div class="mt-auto">
+                        <span class="font-label-mono text-label-mono text-[#ff0080] uppercase tracking-wider text-[12px] bg-[#ff0080]/10 px-2 py-1 rounded">Social Media</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section
+            class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col gap-10 animate-on-scroll is-visible"
+            id="contacto-new">
+        <div class="flex items-center gap-4">
+            <span class="font-label-mono text-label-mono text-neon-magenta">6.</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-background">Contacto</h2>
+            <div class="h-[1px] flex-1 bg-gradient-to-r from-neon-magenta/50 to-neon-cyan/50 relative">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-neon-cyan rounded-full shadow-[0_0_8px_#00f3ff]"></div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <!-- CTA Banner -->
+            <div class="flex flex-col gap-6">
+                <div class="bg-surface-container/40 backdrop-blur-md border border-neon-cyan/30 p-8 rounded-xl relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <h3 class="font-headline-xl text-headline-lg text-on-background mb-4 leading-tight">
+                        PROYECTA JUNTO A MI TU <br><span class="gradient-text">FUTURO TECNOLÓGICO</span>
+                    </h3>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Agenda una auditoría técnica o solicita presupuesto para tu próximo proyecto. Hablamos desde el
+                        núcleo de la tecnología.
+                    </p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-neon-cyan/10 flex items-center justify-center border border-neon-cyan/30">
+                            <span class="material-symbols-outlined text-neon-cyan">bolt</span>
+                        </div>
+                        <span class="font-label-mono text-label-mono text-on-background">Respuesta en menos de 24h</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Glassmorphism Form -->
+            <div class="bg-surface-container/50 backdrop-blur-[12px] border border-glass-border p-8 rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.5)] relative">
+                <div class="absolute -top-[1px] -left-[1px] w-20 h-[1px] bg-neon-cyan shadow-[0_0_10px_#00f3ff]"></div>
+                <div class="absolute -bottom-[1px] -right-[1px] w-20 h-[1px] bg-neon-magenta shadow-[0_0_10px_#ff00ff]"></div>
+                <form action="mailto:carlosgutitoledo@gmail.com" method="POST" enctype="text/plain" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-mono text-[12px] text-neon-cyan uppercase tracking-wider">Nombre</label>
+                            <input class="bg-surface-container-high/50 border border-glass-border rounded p-3 text-on-background focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:opacity-30"
+                                   placeholder="Tu nombre" type="text">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-mono text-[12px] text-neon-magenta uppercase tracking-wider">Email</label>
+                            <input class="bg-surface-container-high/50 border border-glass-border rounded p-3 text-on-background focus:border-neon-magenta focus:ring-1 focus:ring-neon-magenta outline-none transition-all placeholder:opacity-30"
+                                   placeholder="tu@email.com" type="email">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-mono text-[12px] text-primary uppercase tracking-wider">Servicio de
+                            Interés</label>
+                        <select class="bg-surface-container-high/50 border border-glass-border rounded p-3 text-on-background focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none">
+                            <option value="soporte">Soporte TI</option>
+                            <option value="rendimiento">Alto Rendimiento</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="redes">Redes Sociales</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-mono text-[12px] text-on-surface-variant uppercase tracking-wider">Mensaje</label>
+                        <textarea
+                                class="bg-surface-container-high/50 border border-glass-border rounded p-3 text-on-background focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all placeholder:opacity-30 resize-none"
+                                placeholder="¿Cómo podemos ayudarte?" rows="4"></textarea>
+                    </div>
+                    <button class="w-full py-4 bg-gradient-to-r from-neon-cyan/20 to-neon-magenta/20 border border-glass-border text-on-background font-label-mono font-bold uppercase tracking-widest rounded hover:from-neon-cyan hover:to-neon-magenta hover:text-white transition-all duration-500 shadow-[0_0_15px_rgba(0,243,255,0.1)] hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] group relative overflow-hidden"
+                            type="submit">
+                        <span class="relative z-10">Enviar Mensaje</span>
+                        <div class="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-glass-border">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center px-4 md:px-margin-desktop py-12 max-w-[1600px] mx-auto gap-4">
+
+        <div class="flex flex-row items-center gap-4 justify-self-start">
+            <span class="font-headline-lg text-headline-lg gradient-text whitespace-nowrap">Soporte TI</span>
+            <div class="flex gap-2">
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
+                    <span class="material-symbols-outlined text-xs">verified</span>Certificado por GOOGLE
+                </div>
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
+                    <span class="material-symbols-outlined text-xs">school</span>Certificado por SENCE
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center font-body-md text-on-surface-variant opacity-60 justify-self-center order-3 md:order-2 whitespace-nowrap">
+            © 2026
+        </div>
+
+        <div class="flex items-center gap-6 font-body-md justify-self-end order-2 md:order-3">
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.linkedin.com/in/carlosgutierreztoledo/" target="_blank">
+                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="LinkedIn" class="w-5 h-5"/>LinkedIn
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.youtube.com/@diginucleo" target="_blank">
+                <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="YouTube" class="w-5 h-5"/>YouTube
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.instagram.com/Diginucleo" target="_blank">
+                <img src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" class="w-5 h-5"/>Instagram
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="mailto:carlosgutitoledo@gmail.com">
+                <img src="https://api.iconify.design/skill-icons:gmail-light.svg" alt="Email" class="w-5 h-5"/>Email
+            </a>
+        </div>
+    </div>
+</footer>
+<!-- Intersection Observer for Scroll Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<!-- Bootstrap JS (necesario para el menú hamburguesa) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

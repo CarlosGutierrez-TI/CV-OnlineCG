@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Alto Rendimiento | DigiNucleo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#373438",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "on-primary": "#40215e",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-fixed": "#ffdeac",
+                        "surface-container-low": "#1d1b1f",
+                        "surface-container": "#231e27",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "error-container": "#93000a",
+                        "primary": "#f0daff",
+                        "outline-variant": "#4b444f",
+                        "on-error": "#690005",
+                        "surface": "#151217",
+                        "on-background": "#e8e0e7",
+                        "tertiary-fixed-dim": "#fabc4e",
+                        "tertiary": "#ffddaa",
+                        "on-primary-container": "#644483",
+                        "on-primary-fixed": "#2a0848",
+                        "tertiary-container": "#f9bb4d",
+                        "primary-container": "#ddb7ff",
+                        "on-secondary-container": "#00424e",
+                        "secondary-fixed": "#acedff",
+                        "secondary-container": "#03b5d3",
+                        "on-surface-variant": "#cdc3d0",
+                        "inverse-primary": "#715090",
+                        "on-surface": "#e8e0e7",
+                        "on-primary-fixed-variant": "#583876",
+                        "primary-fixed": "#f0dbff",
+                        "on-tertiary-container": "#6e4b00",
+                        "neon-magenta": "#D946EF",
+                        "surface-container-high": "#2c292d",
+                        "outline": "#968e99",
+                        "neon-cyan": "#06B6D4",
+                        "surface-variant": "#373438",
+                        "background": "#16111b",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#ddb7ff",
+                        "on-secondary": "#003640",
+                        "surface-container-lowest": "#100d11",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "on-tertiary-fixed": "#281900",
+                        "inverse-surface": "#e8e0e7",
+                        "inverse-on-surface": "#332f34",
+                        "surface-dim": "#151217",
+                        "on-error-container": "#ffdad6",
+                        "success-emerald": "#10B981",
+                        "on-tertiary": "#432c00",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "secondary": "#4cd7f6",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "surface-bright": "#3b383d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-xl": ["Space Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {
+                            "lineHeight": "56px",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "700"
+                        }],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #16111b;
+            background-image: radial-gradient(rgba(221, 183, 255, 0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+            color: #e8e0e7;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .cyber-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(to right, rgba(221, 183, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(221, 183, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+        }
+    </style>
+    <meta name="description"
+          content="Carlos Gutierrez - Especialista TI, Desarrollador FullStack y Estratega Digital. Soluciones tecnológicas, hardware de alto rendimiento y marketing para PYMES.">
+    <meta property="og:title" content="DigiNucleo | Carlos Gutierrez">
+    <meta property="og:description"
+          content="Optimizamos tu infraestructura digital a nivel molecular. Soporte TI, Desarrollo Web y Marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body class="font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-md border-b border-glass-border shadow-[0_0_20px_rgba(0,243,255,0.1)] transition-all duration-300 ease-in-out">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+
+        <!-- Brand Logo + Nombre -->
+        <a class="flex items-center gap-3 h-10 hover:opacity-80 transition-opacity" href="index.html">
+            <img alt="DigiNucleo Logo" class="h-full object-contain rounded-md shadow-[0_0_10px_rgba(0,243,255,0.2)]"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTbc-lMaN-YO8zwINn0dYOxCSxj8ZyiDLixpKDAdZy6tvKQuVB1XsQTybREKzH50-bUVGEtyApZiqtjMO3GjNb1rak0JV2lbH3hu-AzE6WFZ0vkjnW-fUo6AnxaZFzG6JAv9GsOHEqTCF_KdZZxOxHA4CA_-zE5oPI1KS1a9k-Oo_-wD7aAWovFDmoGkExyNMN6O36NkBv-dxv5cr8WdRSFhD-VktGO4ei9giCTUMqvf9hKMCcoLIwnIn4M5mdZIgHFp2egSx-Q">
+            <span class="font-label-mono text-[22px] gradient-text whitespace-nowrap hidden md:block">Carlos Gutiérrez</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex gap-2 xl:gap-8 items-center font-label-mono text-[14px]">
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html">Inicio</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#quien-soy">Quién Soy</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#formacion">Formación</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#experiencia">Experiencia</a>
+
+            <!-- Dropdown Servicios -->
+            <div class="relative group">
+                <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg flex items-center gap-1 cursor-pointer font-medium whitespace-nowrap"
+                   href="index.html#portafolio">
+                    Servicios <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                </a>
+
+                <div class="absolute top-full left-0 mt-2 w-max bg-surface-container/85 backdrop-blur-xl border border-glass-border rounded-xl shadow-[0_0_20px_rgba(0,243,255,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 z-50">
+                    <a class="text-on-surface-variant hover:text-neon-cyan hover:bg-neon-cyan/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="soporte-tecnico-y-mantenimiento.html"><span class="material-symbols-outlined text-[16px]">build</span>
+                        Soporte Técnico</a>
+                    <a class="text-on-surface-variant hover:text-[#39FF14] hover:bg-[#39FF14]/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="alto-rendimiento.html"><span
+                            class="material-symbols-outlined text-[16px]">sports_esports</span> Alto Rendimiento</a>
+                    <a class="text-on-surface-variant hover:text-neon-magenta hover:bg-neon-magenta/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="digitalizacion-marketing.html"><span class="material-symbols-outlined text-[16px]">storefront</span>
+                        Marketing PYMES</a>
+                    <a class="text-on-surface-variant hover:text-[#FFD700] hover:bg-[#FFD700]/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="rrss-contenido.html"><span class="material-symbols-outlined text-[16px]">share</span>
+                        Gestión de Redes Sociales</a>
+                </div>
+            </div>
+
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#contacto-new">Contacto</a>
+        </nav>
+
+        <!-- Trailing Action -->
+        <div class="flex items-center gap-3">
+            <a href="static/CV_Carlos_Gutierrez_Toledo_2026.pdf" download="CV_Carlos_Gutierrez.pdf" target="_blank"
+               class="hidden md:flex items-center gap-2 px-5 py-2 border border-glass-border bg-surface-container-high/50 text-on-surface hover:text-neon-cyan hover:border-neon-cyan/50 font-label-mono text-[14px] font-bold rounded-lg shadow-[0_0_10px_rgba(0,243,255,0.1)] hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all duration-300 whitespace-nowrap">
+                <span class="material-symbols-outlined text-[18px]">download</span> Descargar CV
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-neon-cyan p-2 hover:bg-neon-cyan/10 rounded-lg transition-colors">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</header>
+<main class="pt-32 pb-32">
+    <!-- Hero Section with Background Image -->
+    <section class="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-32">
+        <div class="md:col-span-7 z-10 reveal-on-scroll">
+            <div class="cyber-grid"></div>
+            <div class="grid md:grid-cols-12 gap-gutter items-center">
+                <div class="md:col-span-7 z-10">
+                    <div class="inline-flex items-center gap-2 bg-surface-bright/50 border border-glass-border rounded-full px-4 py-1 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-neon-magenta animate-pulse"></span>
+                        <span class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant">Optimización Tactica</span>
+                    </div>
+                    <h1 class="font-headline-xl text-headline-xl mb-6 text-white leading-tight">
+                        Alto Rendimiento <br>
+                        <span class="text-primary-fixed-dim">(Gamer y Creadores)</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8">
+                        Arquitectura de sistemas diseñada para la victory. Eliminamos el lag, optimizamos FPS y
+                        configuramos infraestructuras de streaming que no comprometen tu rendimiento táctico.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 font-label-mono text-label-mono text-neon-cyan border border-neon-cyan/20 bg-neon-cyan/5 px-4 py-2">
+                            <span class="material-symbols-outlined"
+                                  style="font-variation-settings: 'FILL' 1;">speed</span> ZERO STUTTERING
+                        </div>
+                        <div class="flex items-center gap-2 font-label-mono text-label-mono text-neon-magenta border border-neon-magenta/20 bg-neon-magenta/5 px-4 py-2">
+                            <span class="material-symbols-outlined">wifi_tethering</span> LOWEST PING
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 relative group">
+                    <div class="absolute -inset-4 bg-primary-fixed-dim/10 blur-3xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                    <img alt="High Performance Gaming Setup"
+                         class="relative z-10 w-full rounded-lg border border-glass-border shadow-2xl grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYUlo7SPsMToBFpWmZYjgnLgOI_ty_pwyvdLG3zWORXtkwTJZ7IJAW3UCTssFoOORWhbwYLxeC5S5F0caWSzZKiRfXqupKbK2L0vLOdOYISspulAtNrnSA5T_zis5MZcyO9irn-IadQRPloBrORBSAu8qfNG4bxDc4s1C946Hm-dxpX5Sox8tl4Yvapmvpi2xizkC7nWVUfLJG7paj6zEdhwJXSxI_qzv3W-PL0R2bKIxmi-wgvnL24aSWSBzBohzgKYyLYpdw4g">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bento Grid Services -->
+    <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-32">
+        <h2 class="font-headline-lg text-headline-lg mb-12 flex items-center gap-4 reveal-on-scroll opacity-0 translate-y-10">
+            <span class="w-12 h-0.5 bg-neon-cyan"></span>
+            Servicios Core
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- FPS Optimization -->
+            <div class="glass-card p-8 group hover:border-primary-fixed-dim/50 transition-all cursor-default duration-700 opacity-100">
+                <span class="material-symbols-outlined text-4xl text-primary-fixed-dim mb-6"
+                      style="font-variation-settings: 'FILL' 1;">hardware</span>
+                <h3 class="font-headline-lg text-headline-lg mb-4">Competitive FPS</h3>
+                <p class="text-on-surface-variant font-body-md mb-6">Overclocking estable, optimización de latencia de
+                    entrada y debloating profundo de Windows para maximizar cada frame.</p>
+                <ul class="space-y-3 font-label-mono text-label-mono text-sm opacity-80">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-neon-cyan rounded-full"></span> BIOS
+                        Tuning
+                    </li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-neon-cyan rounded-full"></span> RAM
+                        Latency Audit
+                    </li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-neon-cyan rounded-full"></span> GPU
+                        Voltage Curve
+                    </li>
+                </ul>
+            </div>
+            <!-- Networking -->
+            <div class="glass-card p-8 group hover:border-neon-cyan/50 transition-all cursor-default relative overflow-hidden duration-700 opacity-100">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <span class="material-symbols-outlined text-8xl">hub</span>
+                </div>
+                <span class="material-symbols-outlined text-4xl text-neon-cyan mb-6">router</span>
+                <h3 class="font-headline-lg text-headline-lg mb-4">Network Ops</h3>
+                <p class="text-on-surface-variant font-body-md mb-6">Routing prioritario para paquetes de juego y
+                    optimización de jitter. Adiós a las pérdidas de paquetes en momentos críticos.</p>
+                <ul class="space-y-3 font-label-mono text-label-mono text-sm opacity-80">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-neon-magenta rounded-full"></span>
+                        Packet Priority
+                    </li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-neon-magenta rounded-full"></span>
+                        MTU Optimization
+                    </li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-neon-magenta rounded-full"></span>
+                        Zero-Bufferbloat
+                    </li>
+                </ul>
+            </div>
+            <!-- Streaming -->
+            <div class="glass-card p-8 group hover:border-neon-magenta/50 transition-all cursor-default duration-700 opacity-100">
+                <span class="material-symbols-outlined text-4xl text-neon-magenta mb-6"
+                      style="font-variation-settings: 'FILL' 1;">videocam</span>
+                <h3 class="font-headline-lg text-headline-lg mb-4">Stream Arch.</h3>
+                <p class="text-on-surface-variant font-body-md mb-6">Arquitectura OBS avanzada con NDI/Encoders
+                    dedicados para streaming profesional sin afectar la experiencia de juego.</p>
+                <ul class="space-y-3 font-label-mono text-label-mono text-sm opacity-80">
+                    <li class="flex items-center gap-2"><span
+                            class="w-1.5 h-1.5 bg-primary-fixed-dim rounded-full"></span> Dual PC Setup
+                    </li>
+                    <li class="flex items-center gap-2"><span
+                            class="w-1.5 h-1.5 bg-primary-fixed-dim rounded-full"></span> Plugin Optimization
+                    </li>
+                    <li class="flex items-center gap-2"><span
+                            class="w-1.5 h-1.5 bg-primary-fixed-dim rounded-full"></span> Audio Routing (ASIO)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Technical Specification Section -->
+    <section class="bg-surface-container-low py-24 border-y border-glass-border">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid md:grid-cols-2 gap-gutter items-center">
+            <div class="space-y-12">
+                <h2 class="font-headline-lg text-headline-lg">Respuesta Táctica <br><span class="text-neon-cyan">Mantenimiento de Consolas</span>
+                </h2>
+                <div class="flex gap-6">
+                    <div class="flex-none w-1 bg-gradient-to-b from-neon-cyan to-transparent"></div>
+                    <div>
+                        <h4 class="font-label-mono text-label-mono text-white mb-2 uppercase">Thermal Re-pasting</h4>
+                        <p class="font-body-md text-on-surface-variant">Uso de metales líquidos y compuestos de alto
+                            rendimiento para PS5/Xbox Series X. Estabilidad térmica total.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="flex-none w-1 bg-gradient-to-b from-neon-magenta to-transparent"></div>
+                    <div>
+                        <h4 class="font-label-mono text-label-mono text-white mb-2 uppercase">Deep Sonic Cleaning</h4>
+                        <p class="font-body-md text-on-surface-variant">Limpieza ultrasónica de componentes para
+                            prevenir el sobrecalentamiento y el throttling de potencia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="absolute inset-0 bg-neon-cyan/5 blur-3xl rounded-full"></div>
+                <div class="glass-card p-1 aspect-square w-full max-w-md flex items-center justify-center relative overflow-hidden group transition-all duration-700 opacity-100">
+                    <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neon-cyan via-transparent to-transparent group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="text-center p-12 z-10">
+                        <span class="material-symbols-outlined text-6xl text-neon-cyan mb-4 animate-pulse">memory</span>
+                        <div class="font-headline-xl text-headline-xl text-white mb-2">0.1ms</div>
+                        <div class="font-label-mono text-label-mono text-on-surface-variant tracking-widest">INPUT
+                            LATENCY TARGET
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-32 text-center">
+        <div class="glass-card p-16 rounded-xl border-neon-cyan/20 relative overflow-hidden transition-all duration-700 opacity-100">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-cyan to-transparent"></div>
+            <h2 class="font-headline-xl text-headline-xl mb-6">¿Listo para el siguiente nivel?</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                No dejes que el hardware sea el cuello de botella de tu talento. Solicita un diagnóstico de rendimiento
+                personalizado hoy mismo.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <button class="bg-primary-fixed-dim text-on-primary font-label-mono text-label-mono px-10 py-4 rounded-DEFAULT flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(221,183,255,0.4)] transition-all">
+                    AUDITAR MI SETUP <span class="material-symbols-outlined">keyboard_arrow_right</span>
+                </button>
+                <a class="border border-glass-border hover:border-on-surface-variant font-label-mono text-label-mono px-10 py-4 rounded-DEFAULT flex items-center justify-center gap-2 transition-all"
+                   href="{{DATA:SCREEN:SCREEN_15}}#portafolio">VER SERVICIOS <span class="material-symbols-outlined">visibility</span></a>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer Action -->
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16 flex justify-center">
+    <a class="flex items-center gap-2 font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors border border-glass-border px-6 py-3 rounded-DEFAULT group"
+       href="index.html#portafolio">
+        <span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+        VOLVER A SERVICIOS
+    </a>
+</div>
+<footer class="bg-surface-container-lowest border-t border-glass-border">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center px-4 md:px-margin-desktop py-12 max-w-[1600px] mx-auto gap-4">
+
+        <div class="flex flex-row items-center gap-4 justify-self-start">
+            <span class="font-headline-lg text-headline-lg gradient-text whitespace-nowrap">Soporte TI</span>
+            <div class="flex gap-2">
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
+                    <span class="material-symbols-outlined text-xs">verified</span>Certificado por GOOGLE
+                </div>
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
+                    <span class="material-symbols-outlined text-xs">school</span>Certificado por SENCE
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center font-body-md text-on-surface-variant opacity-60 justify-self-center order-3 md:order-2 whitespace-nowrap">
+            © 2026
+        </div>
+
+        <div class="flex items-center gap-6 font-body-md justify-self-end order-2 md:order-3">
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.linkedin.com/in/carlosgutierreztoledo/" target="_blank">
+                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="LinkedIn" class="w-5 h-5"/>LinkedIn
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.youtube.com/@diginucleo" target="_blank">
+                <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="YouTube" class="w-5 h-5"/>YouTube
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.instagram.com/Diginucleo" target="_blank">
+                <img src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" class="w-5 h-5"/>Instagram
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="mailto:carlosgutitoledo@gmail.com">
+                <img src="https://api.iconify.design/skill-icons:gmail-light.svg" alt="Email" class="w-5 h-5"/>Email
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    // Selector dual para cubrir tanto tarjetas como bloques de texto
+    document.querySelectorAll('.glass-card, .reveal-on-scroll').forEach(element => {
+        element.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+        observer.observe(element);
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Gestión de Redes Sociales | DigiNucleo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#373438",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "on-primary": "#40215e",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-fixed": "#ffdeac",
+                        "surface-container-low": "#1d1b1f",
+                        "surface-container": "#231e27",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "error-container": "#93000a",
+                        "primary": "#f0daff",
+                        "outline-variant": "#4b444f",
+                        "on-error": "#690005",
+                        "surface": "#151217",
+                        "on-background": "#e8e0e7",
+                        "tertiary-fixed-dim": "#fabc4e",
+                        "tertiary": "#ffddaa",
+                        "on-primary-container": "#644483",
+                        "on-primary-fixed": "#2a0848",
+                        "tertiary-container": "#f9bb4d",
+                        "primary-container": "#ddb7ff",
+                        "on-secondary-container": "#00424e",
+                        "secondary-fixed": "#acedff",
+                        "secondary-container": "#03b5d3",
+                        "on-surface-variant": "#cdc3d0",
+                        "inverse-primary": "#715090",
+                        "on-surface": "#e8e0e7",
+                        "on-primary-fixed-variant": "#583876",
+                        "primary-fixed": "#f0dbff",
+                        "on-tertiary-container": "#6e4b00",
+                        "neon-magenta": "#D946EF",
+                        "surface-container-high": "#2c292d",
+                        "outline": "#968e99",
+                        "neon-cyan": "#06B6D4",
+                        "surface-variant": "#373438",
+                        "background": "#16111b",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#ddb7ff",
+                        "on-secondary": "#003640",
+                        "surface-container-lowest": "#100d11",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "on-tertiary-fixed": "#281900",
+                        "inverse-surface": "#e8e0e7",
+                        "inverse-on-surface": "#332f34",
+                        "surface-dim": "#151217",
+                        "on-error-container": "#ffdad6",
+                        "success-emerald": "#10B981",
+                        "on-tertiary": "#432c00",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "secondary": "#4cd7f6",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "surface-bright": "#3b383d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-xl": ["Space Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {
+                            "lineHeight": "56px",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "700"
+                        }],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <meta name="description"
+          content="Carlos Gutierrez - Especialista TI, Desarrollador FullStack y Estratega Digital. Soluciones tecnológicas, hardware de alto rendimiento y marketing para PYMES.">
+    <meta property="og:title" content="DigiNucleo | Carlos Gutierrez">
+    <meta property="og:description"
+          content="Optimizamos tu infraestructura digital a nivel molecular. Soporte TI, Desarrollo Web y Marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-md border-b border-glass-border shadow-[0_0_20px_rgba(0,243,255,0.1)] transition-all duration-300 ease-in-out">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+
+        <!-- Brand Logo + Nombre -->
+        <a class="flex items-center gap-3 h-10 hover:opacity-80 transition-opacity" href="index.html">
+            <img alt="DigiNucleo Logo" class="h-full object-contain rounded-md shadow-[0_0_10px_rgba(0,243,255,0.2)]"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTbc-lMaN-YO8zwINn0dYOxCSxj8ZyiDLixpKDAdZy6tvKQuVB1XsQTybREKzH50-bUVGEtyApZiqtjMO3GjNb1rak0JV2lbH3hu-AzE6WFZ0vkjnW-fUo6AnxaZFzG6JAv9GsOHEqTCF_KdZZxOxHA4CA_-zE5oPI1KS1a9k-Oo_-wD7aAWovFDmoGkExyNMN6O36NkBv-dxv5cr8WdRSFhD-VktGO4ei9giCTUMqvf9hKMCcoLIwnIn4M5mdZIgHFp2egSx-Q">
+            <span class="font-label-mono text-[22px] gradient-text whitespace-nowrap hidden md:block">Carlos Gutiérrez</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex gap-2 xl:gap-8 items-center font-label-mono text-[14px]">
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html">Inicio</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#quien-soy">Quién Soy</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#formacion">Formación</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#experiencia">Experiencia</a>
+
+            <!-- Dropdown Servicios -->
+            <div class="relative group">
+                <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg flex items-center gap-1 cursor-pointer font-medium whitespace-nowrap"
+                   href="index.html#portafolio">
+                    Servicios <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                </a>
+
+                <div class="absolute top-full left-0 mt-2 w-max bg-surface-container/85 backdrop-blur-xl border border-glass-border rounded-xl shadow-[0_0_20px_rgba(0,243,255,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 z-50">
+                    <a class="text-on-surface-variant hover:text-neon-cyan hover:bg-neon-cyan/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="soporte-tecnico-y-mantenimiento.html"><span class="material-symbols-outlined text-[16px]">build</span>
+                        Soporte Técnico</a>
+                    <a class="text-on-surface-variant hover:text-[#39FF14] hover:bg-[#39FF14]/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="alto-rendimiento.html"><span
+                            class="material-symbols-outlined text-[16px]">sports_esports</span> Alto Rendimiento</a>
+                    <a class="text-on-surface-variant hover:text-neon-magenta hover:bg-neon-magenta/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="digitalizacion-marketing.html"><span class="material-symbols-outlined text-[16px]">storefront</span>
+                        Marketing PYMES</a>
+                    <a class="text-on-surface-variant hover:text-[#FFD700] hover:bg-[#FFD700]/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="rrss-contenido.html"><span class="material-symbols-outlined text-[16px]">share</span>
+                        Gestión de Redes Sociales</a>
+                </div>
+            </div>
+
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#contacto-new">Contacto</a>
+        </nav>
+
+        <!-- Trailing Action -->
+        <div class="flex items-center gap-3">
+            <a href="static/CV_Carlos_Gutierrez_Toledo_2026.pdf" download="CV_Carlos_Gutierrez.pdf" target="_blank"
+               class="hidden md:flex items-center gap-2 px-5 py-2 border border-glass-border bg-surface-container-high/50 text-on-surface hover:text-neon-cyan hover:border-neon-cyan/50 font-label-mono text-[14px] font-bold rounded-lg shadow-[0_0_10px_rgba(0,243,255,0.1)] hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all duration-300 whitespace-nowrap">
+                <span class="material-symbols-outlined text-[18px]">download</span> Descargar CV
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-neon-cyan p-2 hover:bg-neon-cyan/10 rounded-lg transition-colors">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</header>
+<main class="pt-24 pb-20">
+    <!-- Hero Section with Context Image -->
+    <section
+            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-32">
+        <div class="md:col-span-7 space-y-6 reveal-on-scroll opacity-0 translate-y-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-bright/50 border border-glass-border rounded-full font-label-mono text-xs text-neon-cyan">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                ESTRATEGIA DIGITAL AVANZADA
+            </div>
+            <h1 class="font-headline-xl text-headline-xl leading-tight">
+                Gestión de <span class="text-primary-fixed-dim">Redes Sociales</span> &amp; Contenido
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                Transformamos tu presencia digital en una máquina de <span class="text-neon-magenta font-bold">autoridad de marca</span>.
+                No solo buscamos likes; nos enfocamos en <span class="text-neon-cyan underline underline-offset-4">convertir seguidores en clientes</span>
+                reales mediante contenido de alto impacto visual.
+            </p>
+            <div class="flex gap-4 pt-4">
+                <button class="bg-primary-fixed-dim text-on-primary px-8 py-4 rounded-lg flex items-center gap-2 font-bold hover:brightness-110 transition-all">
+                    Solicitar Auditoría
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+                <button class="border border-primary-fixed-dim/50 text-primary-fixed-dim px-8 py-4 rounded-lg hover:bg-primary-fixed-dim/10 transition-all">
+                    Ver Servicios
+                </button>
+            </div>
+        </div>
+        <div class="md:col-span-5 relative group reveal-on-scroll opacity-0 translate-y-10">
+            <div class="absolute -inset-4 bg-neon-cyan/10 rounded-xl blur-2xl group-hover:bg-neon-cyan/20 transition-all duration-500"></div>
+            <div class="relative glass-card overflow-hidden rounded-xl aspect-[4/5] md:aspect-square">
+                <img alt="Social Media Management"
+                     class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrTzjkYGrflIwLaTgx4c_F7FSiKAE5xUHuV7R0_ArwnZISTUBz4mlHrL4vGw5JImeByGzfFhPWxJH-SlipmkVucRTMWGF1VAgqXnKjEFoIt-EQevF4a7MVADydMrQVDly75VIe4_05RwdjrMJ9yPEnZrkFj2C_0qs_6-9psCgbE_nMpQH9yK0qv8jm5XUvWQ6R2WmfC-bZ3_JVnEmwSC2nAwCJh_0bz26ht_PUe6H2RPHwZaVXWdMduxcz1ow4tvV5fSDbGSbaxw">
+            </div>
+            <!-- Float elements -->
+            <div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-lg hidden md:block">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-neon-magenta rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white">trending_up</span>
+                    </div>
+                    <div>
+                        <p class="text-xs font-label-mono text-on-surface-variant">Growth Rate</p>
+                        <p class="text-lg font-bold">+245%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bento Grid Services -->
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32">
+        <div class="text-center mb-16 reveal-on-scroll opacity-0 translate-y-10">
+            <h2 class="font-headline-lg text-headline-lg mb-4">Nuestros Pilares de <span class="text-neon-cyan">Crecimiento</span>
+            </h2>
+            <p class="font-body-md text-on-surface-variant">Ingeniería visual aplicada al marketing de contenidos.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- TikTok/Reels Strategy -->
+            <div class="md:col-span-2 glass-card p-8 rounded-xl flex flex-col justify-between h-[320px] opacity-0 translate-y-10">
+                <div>
+                    <span class="material-symbols-outlined text-neon-cyan text-4xl mb-4">videocam</span>
+                    <h3 class="font-headline-lg text-headline-lg-mobile mb-2">Estrategia TikTok &amp; Reels</h3>
+                    <p class="text-on-surface-variant">Guionización y producción optimizada para el algoritmo. Contenido
+                        vertical que retiene y viraliza.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="bg-surface-bright px-3 py-1 rounded text-[10px] font-label-mono">VIRAL_HOOKS</span>
+                    <span class="bg-surface-bright px-3 py-1 rounded text-[10px] font-label-mono">REEL_EDITING</span>
+                </div>
+            </div>
+            <!-- Commercial Graphic Design -->
+            <div class="glass-card p-8 rounded-xl h-[320px] opacity-0 translate-y-10">
+                <span class="material-symbols-outlined text-neon-magenta text-4xl mb-4">polyline</span>
+                <h3 class="font-headline-lg text-headline-lg-mobile mb-2 leading-tight">Diseño Gráfico Comercial</h3>
+                <p class="text-on-surface-variant text-sm">Visuales de alta conversión para feeds, stories y publicidad
+                    pagada.</p>
+            </div>
+            <!-- Community Management -->
+            <div class="glass-card p-8 rounded-xl h-[320px] opacity-0 translate-y-10">
+                <span class="material-symbols-outlined text-secondary text-4xl mb-4">group</span>
+                <h3 class="font-headline-lg text-headline-lg-mobile mb-2 leading-tight">Community Management</h3>
+                <p class="text-on-surface-variant text-sm">Gestión activa de comunidades y moderación con enfoque en
+                    ventas.</p>
+            </div>
+            <!-- Retainer Model -->
+            <div class="md:col-span-2 glass-card p-8 rounded-xl bg-primary-fixed-dim/5 border-primary-fixed-dim/30 opacity-0 translate-y-10">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h3 class="font-headline-lg text-headline-lg-mobile mb-2">Modelos de Retainer Mensual</h3>
+                        <p class="text-on-surface-variant">Soporte continuo y ejecución estratégica mes a mes. Tu equipo
+                            de contenido externo.</p>
+                    </div>
+                    <div class="material-symbols-outlined text-5xl text-primary-fixed-dim/20"
+                         style="font-variation-settings: 'FILL' 1;">calendar_month
+                    </div>
+                </div>
+                <div class="mt-8 grid grid-cols-3 gap-4">
+                    <div class="text-center">
+                        <p class="font-label-mono text-primary-fixed-dim text-xl font-bold">Pack S</p>
+                        <p class="text-[10px] text-on-surface-variant">Ideal Startups</p>
+                    </div>
+                    <div class="text-center border-x border-glass-border">
+                        <p class="font-label-mono text-neon-cyan text-xl font-bold">Pack M</p>
+                        <p class="text-[10px] text-on-surface-variant">Más Popular</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-label-mono text-neon-magenta text-xl font-bold">Pack XL</p>
+                        <p class="text-[10px] text-on-surface-variant">Escalado Total</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Brand Authority -->
+            <div class="md:col-span-2 glass-card p-8 rounded-xl flex items-center gap-6 overflow-hidden opacity-0 translate-y-10">
+                <div class="shrink-0 w-20 h-20 rounded-full border-2 border-dashed border-neon-cyan flex items-center justify-center animate-spin-slow">
+                    <span class="material-symbols-outlined text-neon-cyan text-3xl">verified</span>
+                </div>
+                <div>
+                    <h3 class="font-headline-lg text-headline-lg-mobile mb-1">Autoridad de Marca</h3>
+                    <p class="text-on-surface-variant">Posicionamos tu perfil como el referente técnico en tu nicho
+                        mediante curación de contenido experto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Timeline -->
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32 relative">
+        <div class="absolute left-1/2 -translate-x-1/2 h-full cyber-circuit-line top-0 opacity-20 hidden md:block"></div>
+        <div class="mb-20 text-center">
+            <h2 class="font-headline-lg text-headline-lg">El Ciclo de <span
+                    class="text-primary-fixed-dim">Conversión</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center space-y-4">
+                <div class="w-16 h-16 rounded-full bg-surface-bright border border-glass-border mx-auto flex items-center justify-center relative">
+                    <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">visibility</span>
+                    <div class="absolute -right-2 top-0 text-[10px] bg-primary-fixed-dim text-on-primary px-2 rounded-full">
+                        01
+                    </div>
+                </div>
+                <h4 class="font-bold text-lg">Atracción</h4>
+                <p class="text-on-surface-variant text-sm">Contenido vertical de alto impacto diseñado para romper el
+                    scroll infinito.</p>
+            </div>
+            <div class="text-center space-y-4">
+                <div class="w-16 h-16 rounded-full bg-surface-bright border border-glass-border mx-auto flex items-center justify-center relative">
+                    <span class="material-symbols-outlined text-neon-cyan text-3xl">psychology</span>
+                    <div class="absolute -right-2 top-0 text-[10px] bg-neon-cyan text-white px-2 rounded-full">02</div>
+                </div>
+                <h4 class="font-bold text-lg">Retención</h4>
+                <p class="text-on-surface-variant text-sm">Aportamos valor real que genera confianza y posicionamiento
+                    experto.</p>
+            </div>
+            <div class="text-center space-y-4">
+                <div class="w-16 h-16 rounded-full bg-surface-bright border border-glass-border mx-auto flex items-center justify-center relative">
+                    <span class="material-symbols-outlined text-neon-magenta text-3xl">payments</span>
+                    <div class="absolute -right-2 top-0 text-[10px] bg-neon-magenta text-white px-2 rounded-full">03
+                    </div>
+                </div>
+                <h4 class="font-bold text-lg">Conversión</h4>
+                <p class="text-on-surface-variant text-sm">Llamadas a la acción estratégicas que derivan el tráfico a tu
+                    funnel de ventas.</p>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12" id="contacto">
+        <div class="glass-card p-12 rounded-2xl text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+                <span class="material-symbols-outlined text-[120px]">send</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg mb-6">¿Listo para dominar el <span class="text-neon-cyan">ecosistema digital</span>?
+            </h2>
+            <p class="text-on-surface-variant max-w-2xl mx-auto mb-10 font-body-lg">
+                Agenda una consultoría gratuita de 15 minutos para analizar tu estrategia actual y descubrir el
+                potencial de crecimiento de tu marca.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button class="bg-primary-fixed-dim text-on-primary px-10 py-5 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3">
+                    <span class="material-symbols-outlined">mail</span>
+                    Enviar Mensaje Directo
+                </button>
+                <button class="bg-surface-bright/50 border border-glass-border text-white px-10 py-5 rounded-lg hover:bg-surface-bright transition-colors flex items-center justify-center gap-3">
+                    <span class="material-symbols-outlined">phone_iphone</span>
+                    WhatsApp Business
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20 flex justify-center"><a
+        class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed-dim transition-colors group"
+        href="index.html#portafolio"><span
+        class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span><span
+        class="font-label-mono uppercase tracking-widest text-sm">Volver a Servicios</span></a></div>
+</div>
+<footer class="bg-surface-container-lowest border-t border-glass-border">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center px-4 md:px-margin-desktop py-12 max-w-[1600px] mx-auto gap-4">
+
+        <div class="flex flex-row items-center gap-4 justify-self-start">
+            <span class="font-headline-lg text-headline-lg gradient-text whitespace-nowrap">Soporte TI</span>
+            <div class="flex gap-2">
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
+                    <span class="material-symbols-outlined text-xs">verified</span>Certificado por GOOGLE
+                </div>
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
+                    <span class="material-symbols-outlined text-xs">school</span>Certificado por SENCE
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center font-body-md text-on-surface-variant opacity-60 justify-self-center order-3 md:order-2 whitespace-nowrap">
+            © 2026
+        </div>
+
+        <div class="flex items-center gap-6 font-body-md justify-self-end order-2 md:order-3">
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.linkedin.com/in/carlosgutierreztoledo/" target="_blank">
+                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="LinkedIn" class="w-5 h-5"/>LinkedIn
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.youtube.com/@diginucleo" target="_blank">
+                <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="YouTube" class="w-5 h-5"/>YouTube
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.instagram.com/Diginucleo" target="_blank">
+                <img src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" class="w-5 h-5"/>Instagram
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="mailto:carlosgutitoledo@gmail.com">
+                <img src="https://api.iconify.design/skill-icons:gmail-light.svg" alt="Email" class="w-5 h-5"/>Email
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    // Selector dual: monitorea tarjetas y contenedores de texto marcados
+    document.querySelectorAll('.glass-card, .reveal-on-scroll').forEach(element => {
+        element.classList.add('transition-all', 'duration-700');
+        observer.observe(element);
+    });
+</script>
+
+
+</body>
+</html>

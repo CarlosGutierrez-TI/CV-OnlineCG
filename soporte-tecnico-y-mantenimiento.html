@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Soporte Técnico y Mantenimiento | DigiNucleo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#373438",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "on-primary": "#40215e",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-fixed": "#ffdeac",
+                        "surface-container-low": "#1d1b1f",
+                        "surface-container": "#231e27",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "error-container": "#93000a",
+                        "primary": "#f0daff",
+                        "outline-variant": "#4b444f",
+                        "on-error": "#690005",
+                        "surface": "#151217",
+                        "on-background": "#e8e0e7",
+                        "tertiary-fixed-dim": "#fabc4e",
+                        "tertiary": "#ffddaa",
+                        "on-primary-container": "#644483",
+                        "on-primary-fixed": "#2a0848",
+                        "tertiary-container": "#f9bb4d",
+                        "primary-container": "#ddb7ff",
+                        "on-secondary-container": "#00424e",
+                        "secondary-fixed": "#acedff",
+                        "secondary-container": "#03b5d3",
+                        "on-surface-variant": "#cdc3d0",
+                        "inverse-primary": "#715090",
+                        "on-surface": "#e8e0e7",
+                        "on-primary-fixed-variant": "#583876",
+                        "primary-fixed": "#f0dbff",
+                        "on-tertiary-container": "#6e4b00",
+                        "neon-magenta": "#D946EF",
+                        "surface-container-high": "#2c292d",
+                        "outline": "#968e99",
+                        "neon-cyan": "#06B6D4",
+                        "surface-variant": "#373438",
+                        "background": "#16111b",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#ddb7ff",
+                        "on-secondary": "#003640",
+                        "surface-container-lowest": "#100d11",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "on-tertiary-fixed": "#281900",
+                        "inverse-surface": "#e8e0e7",
+                        "inverse-on-surface": "#332f34",
+                        "surface-dim": "#151217",
+                        "on-error-container": "#ffdad6",
+                        "success-emerald": "#10B981",
+                        "on-tertiary": "#432c00",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "secondary": "#4cd7f6",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "surface-bright": "#3b383d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-xl": ["Space Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {
+                            "lineHeight": "56px",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "700"
+                        }],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <meta name="description"
+          content="Carlos Gutierrez - Especialista TI, Desarrollador FullStack y Estratega Digital. Soluciones tecnológicas, hardware de alto rendimiento y marketing para PYMES.">
+    <meta property="og:title" content="DigiNucleo | Carlos Gutierrez">
+    <meta property="og:description"
+          content="Optimizamos tu infraestructura digital a nivel molecular. Soporte TI, Desarrollo Web y Marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-neon-magenta selection:text-white overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-md border-b border-glass-border shadow-[0_0_20px_rgba(0,243,255,0.1)] transition-all duration-300 ease-in-out">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+
+        <!-- Brand Logo + Nombre -->
+        <a class="flex items-center gap-3 h-10 hover:opacity-80 transition-opacity" href="index.html">
+            <img alt="DigiNucleo Logo" class="h-full object-contain rounded-md shadow-[0_0_10px_rgba(0,243,255,0.2)]"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTbc-lMaN-YO8zwINn0dYOxCSxj8ZyiDLixpKDAdZy6tvKQuVB1XsQTybREKzH50-bUVGEtyApZiqtjMO3GjNb1rak0JV2lbH3hu-AzE6WFZ0vkjnW-fUo6AnxaZFzG6JAv9GsOHEqTCF_KdZZxOxHA4CA_-zE5oPI1KS1a9k-Oo_-wD7aAWovFDmoGkExyNMN6O36NkBv-dxv5cr8WdRSFhD-VktGO4ei9giCTUMqvf9hKMCcoLIwnIn4M5mdZIgHFp2egSx-Q">
+            <span class="font-label-mono text-[22px] gradient-text whitespace-nowrap hidden md:block">Carlos Gutiérrez</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex gap-2 xl:gap-8 items-center font-label-mono text-[14px]">
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html">Inicio</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#quien-soy">Quién Soy</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#formacion">Formación</a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#experiencia">Experiencia</a>
+
+            <!-- Dropdown Servicios -->
+            <div class="relative group">
+                <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg flex items-center gap-1 cursor-pointer font-medium whitespace-nowrap"
+                   href="index.html#portafolio">
+                    Servicios <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                </a>
+
+                <div class="absolute top-full left-0 mt-2 w-max bg-surface-container/85 backdrop-blur-xl border border-glass-border rounded-xl shadow-[0_0_20px_rgba(0,243,255,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 z-50">
+                    <a class="text-on-surface-variant hover:text-neon-cyan hover:bg-neon-cyan/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="soporte-tecnico-y-mantenimiento.html"><span class="material-symbols-outlined text-[16px]">build</span>
+                        Soporte Técnico</a>
+                    <a class="text-on-surface-variant hover:text-[#39FF14] hover:bg-[#39FF14]/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="alto-rendimiento.html"><span
+                            class="material-symbols-outlined text-[16px]">sports_esports</span> Alto Rendimiento</a>
+                    <a class="text-on-surface-variant hover:text-neon-magenta hover:bg-neon-magenta/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="digitalizacion-marketing.html"><span class="material-symbols-outlined text-[16px]">storefront</span>
+                        Marketing PYMES</a>
+                    <a class="text-on-surface-variant hover:text-[#FFD700] hover:bg-[#FFD700]/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
+                       href="rrss-contenido.html"><span class="material-symbols-outlined text-[16px]">share</span>
+                        Gestión de Redes Sociales</a>
+                </div>
+            </div>
+
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
+               href="index.html#contacto-new">Contacto</a>
+        </nav>
+
+        <!-- Trailing Action -->
+        <div class="flex items-center gap-3">
+            <a href="static/CV_Carlos_Gutierrez_Toledo_2026.pdf" download="CV_Carlos_Gutierrez.pdf" target="_blank"
+               class="hidden md:flex items-center gap-2 px-5 py-2 border border-glass-border bg-surface-container-high/50 text-on-surface hover:text-neon-cyan hover:border-neon-cyan/50 font-label-mono text-[14px] font-bold rounded-lg shadow-[0_0_10px_rgba(0,243,255,0.1)] hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all duration-300 whitespace-nowrap">
+                <span class="material-symbols-outlined text-[18px]">download</span> Descargar CV
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-neon-cyan p-2 hover:bg-neon-cyan/10 rounded-lg transition-colors">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</header>
+<main class="pt-16 dot-grid min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="z-10 reveal-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-surface-bright/30 border border-glass-border px-4 py-1 rounded-full mb-6">
+                    <span class="material-symbols-outlined text-neon-cyan text-[16px]"
+                          style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+                    <span class="font-label-mono text-label-mono text-on-surface-variant">SERVICIOS DE ÉLITE</span>
+                </div>
+                <h1 class="font-headline-xl text-headline-xl mb-6">Soporte Técnico y <span class="gradient-text-cyan">Mantenimiento</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                    Optimizo la infraestructura digital a nivel molecular. Desde el silicio hasta el software, garantizo
+                    que tu núcleo computacional opere con la máxima eficiencia y fiabilidad.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-col">
+                        <span class="text-neon-cyan font-headline-lg text-[35px]">+50%</span>
+                        <span class="font-label-mono text-[14px] uppercase text-on-surface-variant">Vida Útil</span>
+                    </div>
+                    <div class="w-[1px] h-12 bg-glass-border mx-4"></div>
+                    <div class="flex flex-col">
+                        <span class="text-neon-magenta font-headline-lg text-[35px]">10x</span>
+                        <span class="font-label-mono text-[14px] uppercase text-on-surface-variant">Boost de Velocidad</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <div class="absolute inset-0 bg-primary-fixed-dim/10 blur-[100px] rounded-full"></div>
+                <div class="glass-card rounded-xl overflow-hidden p-2 transition-all duration-700 opacity-100 translate-y-0">
+                    <img alt="Soporte Técnico y Mantenimiento de Hardware"
+                         class="w-full h-auto rounded-lg grayscale hover:grayscale-0 transition-all duration-700 shadow-[0_0_15px_rgba(221,183,255,0.1)]"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmuYpUyAC7Z-juBdUgMmAo13IdhdwuhWdlOt9TfKm6MvYv5ih3sDsmScllVzJMfMMxWplkmBntMk08YvDTllpPwklbsMi5yDojsN0LdYrArVsRRTmBvWrOLRkCqRqAUYp7zc2JyYpXJzjpGnUPqK8tHVQXTc_BWB3Aq3fiN9gvCkQLn0J_yVMb6467B6COD6p-5fQvbjaQCbqzIZO5zprUTqIjhIyhigA_wcKR_18LPozJdHZCC8IPeemUqbtOwOcRbmKJuolwAw">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Bento Grid -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Main Card -->
+            <div class="md:col-span-2 glass-card p-8 rounded-xl glow-hover transition-all flex flex-col justify-between duration-700 opacity-100 translate-y-0">
+                <div>
+                    <span class="material-symbols-outlined text-primary-fixed-dim mb-4 text-[40px]">install_desktop</span>
+                    <h3 class="font-headline-lg text-headline-lg mb-4">Instalación Limpia de OS</h3>
+                    <p class="text-on-surface-variant mb-6">Elimino el bloatware de raíz. Instalaciones optimizadas de
+                        Windows, Linux o MacOS con las últimas actualizaciones de seguridad y drivers críticos
+                        configurados para un rendimiento "bare-metal".</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="font-label-mono text-[12px] bg-surface-bright px-3 py-1 text-on-surface">SIN-TELEMETRÍA</span>
+                    <span class="font-label-mono text-[12px] bg-surface-bright px-3 py-1 text-on-surface">KERNEL-LEVEL</span>
+                    <span class="font-label-mono text-[12px] bg-surface-bright px-3 py-1 text-on-surface">SECURITY+</span>
+                </div>
+            </div>
+            <!-- Preventive Card -->
+            <div class="glass-card p-8 rounded-xl glow-hover transition-all duration-700 opacity-100 translate-y-0">
+                <span class="material-symbols-outlined text-neon-cyan mb-4 text-[40px]">cleaning_services</span>
+                <h3 class="font-headline-lg text-headline-lg mb-4">Mantenimiento Físico</h3>
+                <p class="text-on-surface-variant">Limpieza ultrasónica y remoción de micropartículas. Protegemos tus
+                    componentes del desgaste ambiental.</p>
+            </div>
+            <!-- Thermal Card -->
+            <div class="glass-card p-8 rounded-xl glow-hover transition-all duration-700 opacity-100 translate-y-0">
+                <span class="material-symbols-outlined text-neon-magenta mb-4 text-[40px]">thermostat</span>
+                <h3 class="font-headline-lg text-headline-lg mb-4">Soluciones Térmicas</h3>
+                <p class="text-on-surface-variant">Re-pastado con compuestos de alta conductividad (Metal líquido o
+                    Cerámica) para reducir temperaturas hasta en 15°C.</p>
+            </div>
+            <!-- Upgrade Card -->
+            <div class="md:col-span-2 glass-card p-8 rounded-xl glow-hover transition-all flex flex-col md:flex-row gap-8 items-center duration-700 opacity-100 translate-y-0">
+                <div class="flex-1">
+                    <span class="material-symbols-outlined text-secondary-fixed-dim mb-4 text-[40px]">memory</span>
+                    <h3 class="font-headline-lg text-headline-lg mb-4">Hardware Upgrades (SSD/RAM)</h3>
+                    <p class="text-on-surface-variant">Transición total a tecnología NVMe Gen4 y expansión de memoria
+                        volátil. Transformo estaciones de trabajo lentas en nodos de procesamiento ultra-rápidos.</p>
+                </div>
+                <div class="w-full md:w-48 aspect-square glass-card rounded-lg flex items-center justify-center border-dashed border-2 border-outline-variant transition-all duration-700 opacity-100 translate-y-0">
+                    <div class="text-center">
+                        <div class="text-neon-cyan text-[20px] font-headline-lg">NVMe</div>
+                        <div class="font-label-mono text-[14px] text-on-surface-variant">PCIe 4.0 READY</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Timeline -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <h2 class="font-headline-lg text-headline-lg mb-12 text-center">Protocolo de <span
+                class="text-primary-fixed-dim">Intervención</span></h2>
+        <div class="relative max-w-3xl mx-auto">
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] circuit-line"></div>
+            <div class="relative mb-12 flex justify-start items-center w-full">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_#ddb7ff] z-10"></div>
+                <div class="w-[45%] glass-card p-6 rounded-lg mr-auto text-right transition-all duration-700 opacity-100 translate-y-0">
+                    <div class="font-label-mono text-neon-cyan mb-2">01. DIAGNÓSTICO</div>
+                    <h4 class="font-bold mb-2">Escaneo de Hardware</h4>
+                    <p class="text-[14px] text-on-surface-variant">Análisis exhaustivo de temperaturas, salud de discos
+                        y ciclos de RAM.</p>
+                </div>
+            </div>
+            <div class="relative mb-12 flex justify-end items-center w-full">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary-fixed-dim shadow-[0_0_10px_#ddb7ff] z-10"></div>
+                <div class="w-[45%] glass-card p-6 rounded-lg ml-auto text-left transition-all duration-700 opacity-100 translate-y-0">
+                    <div class="font-label-mono text-neon-magenta mb-2">02. EJECUCIÓN</div>
+                    <h4 class="font-bold mb-2">Intervención Técnica</h4>
+                    <p class="text-[14px] text-on-surface-variant">Aplicación de soluciones físicas y lógicas bajo
+                        estándares ISO.</p>
+                </div>
+            </div>
+            <div class="relative mb-12 flex justify-start items-center w-full">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_#ddb7ff] z-10"></div>
+                <div class="w-[45%] glass-card p-6 rounded-lg mr-auto text-right transition-all duration-700 opacity-100 translate-y-0">
+                    <div class="font-label-mono text-neon-cyan mb-2">03. VALIDACIÓN</div>
+                    <h4 class="font-bold mb-2">Stress Test</h4>
+                    <p class="text-[14px] text-on-surface-variant">Pruebas de carga extrema para asegurar estabilidad
+                        post-servicio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+        <div class="glass-card p-12 rounded-2xl relative overflow-hidden transition-all duration-700 opacity-100 translate-y-0">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-neon-magenta/10 blur-[80px]"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-neon-cyan/10 blur-[80px]"></div>
+            <h2 class="font-headline-xl text-headline-xl mb-6">¿Listo para evolucionar tu hardware?</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                No permitas que la obsolescencia técnica detenga tu productividad. Obtén un presupuesto personalizado
+                para tu equipo hoy mismo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-primary-fixed-dim text-on-primary px-10 py-4 rounded-[2px] font-headline-lg flex items-center gap-3 hover:scale-105 transition-transform shadow-lg shadow-primary-fixed-dim/20">
+                    Agendar Soporte <span class="material-symbols-outlined">rocket_launch</span>
+                </button>
+                <button class="border border-primary-fixed-dim/50 bg-surface-container/50 text-on-surface px-10 py-4 rounded-[2px] font-headline-lg hover:bg-surface-container-high transition-colors">
+                    Consultar Precios
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-glass-border">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center px-4 md:px-margin-desktop py-12 max-w-[1600px] mx-auto gap-4">
+
+        <div class="flex flex-row items-center gap-4 justify-self-start">
+            <span class="font-headline-lg text-headline-lg gradient-text whitespace-nowrap">Soporte TI</span>
+            <div class="flex gap-2">
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
+                    <span class="material-symbols-outlined text-xs">verified</span>Certificado por GOOGLE
+                </div>
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
+                    <span class="material-symbols-outlined text-xs">school</span>Certificado por SENCE
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center font-body-md text-on-surface-variant opacity-60 justify-self-center order-3 md:order-2 whitespace-nowrap">
+            © 2026
+        </div>
+
+        <div class="flex items-center gap-6 font-body-md justify-self-end order-2 md:order-3">
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.linkedin.com/in/carlosgutierreztoledo/" target="_blank">
+                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="LinkedIn" class="w-5 h-5"/>LinkedIn
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.youtube.com/@diginucleo" target="_blank">
+                <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="YouTube" class="w-5 h-5"/>YouTube
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="https://www.instagram.com/Diginucleo" target="_blank">
+                <img src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" class="w-5 h-5"/>Instagram
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
+               href="mailto:carlosgutitoledo@gmail.com">
+                <img src="https://api.iconify.design/skill-icons:gmail-light.svg" alt="Email" class="w-5 h-5"/>Email
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    // Seleccionamos tanto .glass-card como nuestra nueva clase .reveal-on-scroll
+    document.querySelectorAll('.glass-card, .reveal-on-scroll').forEach(element => {
+        element.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+        observer.observe(element);
+    });
+</script>
+
+
+</body>
+</html>

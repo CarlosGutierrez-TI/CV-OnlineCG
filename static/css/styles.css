@@ -1,0 +1,1361 @@
+/* ==========================================================================
+   DigiNucleo — styles.css
+   Cyber-Professional Noir | Carlos Gutierrez Toledo
+   v1.0 — June 2026
+   ==========================================================================
+   ÍNDICE
+   1. Variables CSS (Design Tokens)
+   2. Reset y Base
+   3. Tipografía
+   4. Fondo y Partículas
+   5. Material Symbols
+   6. Animaciones y Keyframes
+   7. Header / Navbar
+   8. Dropdown de Navegación
+   9. Botones
+  10. Cards y Glassmorphism
+  11. Gradientes y Efectos de Texto
+  12. Timeline de Experiencia
+  13. Formulario de Contacto
+  14. Footer
+  15. Utilidades compartidas
+  16. Responsive / Mobile
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (Design Tokens)
+   -------------------------------------------------------------------------- */
+
+:root {
+    /* Colores base */
+    --color-background: #16111b;
+    --color-surface: #151217;
+    --color-surface-dim: #151217;
+    --color-surface-bright: #3b383d;
+    --color-surface-container-lowest: #100d11;
+    --color-surface-container-low: #1d1b1f;
+    --color-surface-container: #231e27;
+    --color-surface-container-high: #2c292d;
+    --color-surface-container-highest: #373438;
+
+    /* Texto */
+    --color-on-background: #e8e0e7;
+    --color-on-surface: #e8e0e7;
+    --color-on-surface-variant: #cdc3d0;
+
+    /* Bordes */
+    --color-outline: #968e99;
+    --color-outline-variant: #4b444f;
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+
+    /* Marca / Primary */
+    --color-primary: #f0daff;
+    --color-primary-container: #ddb7ff;
+    --color-primary-fixed: #f0dbff;
+    --color-primary-fixed-dim: #ddb7ff;
+    --color-on-primary: #40215e;
+    --color-surface-tint: #ddb7ff;
+    --color-inverse-primary: #715090;
+
+    /* Neones */
+    --color-neon-cyan: #06B6D4;
+    --color-neon-magenta: #D946EF;
+    --color-neon-pink: #ff0080;
+
+    /* Estados */
+    --color-success: #10B981;
+    --color-error: #ffb4ab;
+
+    /* Tipografía */
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Hanken Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Espaciado */
+    --space-base: 8px;
+    --space-gutter: 24px;
+    --space-margin-mobile: 16px;
+    --space-margin-desktop: 64px;
+    --container-max: 1200px;
+
+    /* Radios */
+    --radius-sm: 0.125rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-full: 9999px;
+
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Glows */
+    --glow-cyan: 0 0 20px rgba(6, 182, 212, 0.20);
+    --glow-cyan-strong: 0 0 30px rgba(6, 182, 212, 0.40);
+    --glow-magenta: 0 0 20px rgba(217, 70, 239, 0.20);
+    --glow-primary: 0 0 20px rgba(221, 183, 255, 0.20);
+    --glow-header: 0 0 20px rgba(221, 183, 255, 0.15);
+
+    /* Gradientes reutilizables */
+    --gradient-brand: linear-gradient(to right, #ddb7ff, #06B6D4, #D946EF);
+    --gradient-surface: linear-gradient(to right, rgba(6, 182, 212, 0.5), rgba(217, 70, 239, 0.5));
+    --gradient-primary: linear-gradient(to bottom, #ddb7ff, transparent);
+}
+
+
+/* --------------------------------------------------------------------------
+   2. RESET Y BASE
+   -------------------------------------------------------------------------- */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    background-image: radial-gradient(
+            circle at 2px 2px,
+            rgba(221, 183, 255, 0.035) 1px,
+            transparent 0
+    );
+    background-size: 28px 28px;
+    color: var(--color-on-background);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Selección de texto */
+::selection {
+    background-color: rgba(6, 182, 212, 0.30);
+    color: var(--color-neon-cyan);
+}
+
+
+/* --------------------------------------------------------------------------
+   3. TIPOGRAFÍA
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-on-background);
+    margin: 0;
+}
+
+/* Headline XL — Hero */
+.text-headline-xl {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Headline LG — Títulos de sección */
+.text-headline-lg {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+/* Headline LG Mobile — Subtítulos de tarjetas */
+.text-headline-lg-mobile {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+}
+
+/* Body LG */
+.text-body-lg {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+/* Body MD */
+.text-body-md {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+/* Label Mono — etiquetas, fechas, tags */
+.text-label-mono,
+.font-label-mono {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* Colores de texto de acento */
+.text-neon-cyan {
+    color: var(--color-neon-cyan);
+}
+
+.text-neon-magenta {
+    color: var(--color-neon-magenta);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-on-surface-variant {
+    color: var(--color-on-surface-variant);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. FONDO Y PARTÍCULAS
+   -------------------------------------------------------------------------- */
+
+/* Partícula flotante (usada en index.html) */
+.particle {
+    position: fixed;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, rgba(6, 182, 212, 0) 70%);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: -1;
+    will-change: transform;
+}
+
+/* Variante magenta */
+.particle-magenta {
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.5) 0%, rgba(217, 70, 239, 0) 70%);
+}
+
+/* Cyber grid (fondo de grilla en subpáginas) */
+.cyber-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(221, 183, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(221, 183, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    pointer-events: none;
+}
+
+/* Dot grid alternativo */
+.dot-grid {
+    background-image: radial-gradient(rgba(221, 183, 255, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Circuit background (usado en subpáginas) */
+.circuit-bg {
+    background-image: radial-gradient(rgba(221, 183, 255, 0.05) 1px, transparent 0);
+    background-size: 32px 32px;
+}
+
+
+/* --------------------------------------------------------------------------
+   5. MATERIAL SYMBOLS
+   -------------------------------------------------------------------------- */
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    vertical-align: middle;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. ANIMACIONES Y KEYFRAMES
+   -------------------------------------------------------------------------- */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: var(--glow-cyan);
+    }
+    50% {
+        box-shadow: var(--glow-cyan-strong);
+    }
+}
+
+/* Clases de animación */
+.animate-float {
+    animation: float 10s ease-in-out infinite;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Reveal on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays para hijos de grillas */
+.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.animate-on-scroll:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.animate-on-scroll:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+
+/* --------------------------------------------------------------------------
+   7. HEADER / NAVBAR
+   -------------------------------------------------------------------------- */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: rgba(21, 18, 23, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-glass-border);
+    box-shadow: var(--glow-header);
+    transition: box-shadow var(--transition-base), background-color var(--transition-base);
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.site-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: var(--space-margin-mobile);
+    max-width: var(--container-max);
+    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/* Logo de texto */
+.site-header__logo-text {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--color-neon-cyan);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: opacity var(--transition-fast);
+}
+
+.site-header__logo-text:hover {
+    opacity: 0.8;
+}
+
+/* Logo imagen */
+.site-header__logo-img {
+    height: 40px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+    transition: opacity var(--transition-fast);
+}
+
+.site-header__logo-img:hover {
+    opacity: 0.8;
+}
+
+/* Navegación desktop */
+.site-nav {
+    display: none;
+    gap: var(--space-base);
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 14px;
+}
+
+.site-nav__link {
+    color: var(--color-on-surface-variant);
+    text-decoration: none;
+    padding: var(--space-base) calc(var(--space-base) * 1.5);
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.site-nav__link:hover {
+    color: var(--color-neon-cyan);
+    background-color: rgba(6, 182, 212, 0.10);
+}
+
+.site-nav__link--active {
+    color: var(--color-primary-fixed-dim);
+    border-bottom: 2px solid var(--color-primary-fixed-dim);
+    font-weight: 700;
+}
+
+/* Botón descarga CV */
+.btn-download-cv {
+    display: none;
+    align-items: center;
+    gap: var(--space-base);
+    padding: var(--space-base) calc(var(--space-gutter) * 0.85);
+    border: 1px solid var(--color-glass-border);
+    background-color: rgba(44, 41, 45, 0.50);
+    color: var(--color-on-surface);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.10);
+    transition: color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.btn-download-cv:hover {
+    color: var(--color-neon-cyan);
+    border-color: rgba(6, 182, 212, 0.50);
+    box-shadow: 0 0 18px rgba(6, 182, 212, 0.30);
+}
+
+/* Botón hamburguesa móvil */
+.btn-menu-toggle {
+    color: var(--color-neon-cyan);
+    padding: var(--space-base);
+    border-radius: var(--radius-lg);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.btn-menu-toggle:hover {
+    background-color: rgba(6, 182, 212, 0.10);
+}
+
+
+/* --------------------------------------------------------------------------
+   8. DROPDOWN DE NAVEGACIÓN
+   -------------------------------------------------------------------------- */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 260px;
+    background-color: rgba(35, 30, 39, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+    padding: var(--space-base);
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.nav-dropdown:hover .nav-dropdown__menu,
+.nav-dropdown:focus-within .nav-dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.nav-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-base);
+    padding: calc(var(--space-base) * 1.5) var(--space-gutter);
+    border-radius: var(--radius-lg);
+    color: var(--color-on-surface-variant);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nav-dropdown__item:hover {
+    color: var(--color-neon-cyan);
+    background-color: rgba(6, 182, 212, 0.10);
+}
+
+.nav-dropdown__item--magenta:hover {
+    color: var(--color-neon-magenta);
+    background-color: rgba(217, 70, 239, 0.10);
+}
+
+.nav-dropdown__item--primary:hover {
+    color: var(--color-primary);
+    background-color: rgba(221, 183, 255, 0.10);
+}
+
+.nav-dropdown__item--pink:hover {
+    color: var(--color-neon-pink);
+    background-color: rgba(255, 0, 128, 0.10);
+}
+
+
+/* --------------------------------------------------------------------------
+   9. BOTONES
+   -------------------------------------------------------------------------- */
+
+/* Botón primario — gradiente neon */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-base);
+    padding: calc(var(--space-base) * 1.5) calc(var(--space-gutter));
+    background: linear-gradient(to right, rgba(6, 182, 212, 0.80), rgba(217, 70, 239, 0.80));
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.30);
+    transition: background var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, var(--color-neon-cyan), var(--color-neon-magenta));
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.50);
+    transform: translateY(-2px);
+}
+
+/* Botón outline (header subpáginas) */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-base);
+    padding: var(--space-base) calc(var(--space-gutter));
+    background-color: var(--color-primary-fixed-dim);
+    color: var(--color-on-primary);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-outline:hover {
+    transform: scale(1.04);
+    box-shadow: var(--glow-primary);
+}
+
+/* Botón de formulario — con sweep */
+.btn-submit {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: calc(var(--space-base) * 2);
+    background: linear-gradient(to right, rgba(6, 182, 212, 0.20), rgba(217, 70, 239, 0.20));
+    border: 1px solid var(--color-glass-border);
+    color: var(--color-on-background);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.10);
+    transition: background var(--transition-slow),
+    box-shadow var(--transition-slow),
+    color var(--transition-slow);
+}
+
+.btn-submit::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(-110%);
+    transition: transform 0.6s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(to right, var(--color-neon-cyan), var(--color-neon-magenta));
+    color: #fff;
+    box-shadow: 0 0 28px rgba(6, 182, 212, 0.40);
+}
+
+.btn-submit:hover::after {
+    transform: translateX(110%);
+}
+
+
+/* --------------------------------------------------------------------------
+  10. CARDS Y GLASSMORPHISM
+   -------------------------------------------------------------------------- */
+
+/* Card de vidrio — base */
+.glass-card {
+    background: rgba(35, 30, 39, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-xl);
+    transition: border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+/* Hover genérico con glow cyan */
+.glow-hover:hover {
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.20), 0 0 15px rgba(217, 70, 239, 0.15);
+    border-color: rgba(6, 182, 212, 0.40);
+    transform: translateY(-5px);
+}
+
+/* Hover sólo glow, sin translate (para cards con contenido denso) */
+.glow-accent:hover {
+    box-shadow: var(--glow-primary);
+    border-color: rgba(221, 183, 255, 0.40);
+}
+
+/* Glow cyan / magenta sin hover (sombra fija) */
+.glow-cyan {
+    box-shadow: var(--glow-cyan);
+}
+
+.glow-magenta {
+    box-shadow: var(--glow-magenta);
+}
+
+/* Card de servicio (subpáginas) */
+.service-card {
+    position: relative;
+    background: rgba(35, 30, 39, 0.40);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.service-card:hover {
+    box-shadow: 0 0 28px rgba(6, 182, 212, 0.20), 0 0 14px rgba(217, 70, 239, 0.15);
+    border-color: rgba(6, 182, 212, 0.40);
+    transform: translateY(-5px);
+}
+
+/* Imagen dentro de service-card */
+.service-card__image {
+    height: 192px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-surface-container-high);
+}
+
+.service-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    opacity: 0.60;
+    mix-blend-mode: screen;
+    transition: opacity var(--transition-base);
+}
+
+.service-card:hover .service-card__image img {
+    opacity: 1;
+}
+
+/* Tags de tecnología */
+.tech-tag {
+    display: inline-block;
+    padding: 2px var(--space-base);
+    background-color: var(--color-surface-bright);
+    border: 1px solid rgba(6, 182, 212, 0.30);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-neon-cyan);
+    box-shadow: 0 0 5px rgba(6, 182, 212, 0.10);
+}
+
+.tech-tag--magenta {
+    border-color: rgba(217, 70, 239, 0.30);
+    color: var(--color-neon-magenta);
+    box-shadow: 0 0 5px rgba(217, 70, 239, 0.10);
+}
+
+.tech-tag--primary {
+    border-color: rgba(221, 183, 255, 0.30);
+    color: var(--color-primary);
+    box-shadow: 0 0 5px rgba(221, 183, 255, 0.10);
+}
+
+/* Pill de habilidades blandas */
+.skill-pill {
+    display: inline-block;
+    padding: 4px calc(var(--space-base) * 1.5);
+    background-color: rgba(44, 41, 45, 0.50);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-full);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-on-surface-variant);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.skill-pill:hover {
+    border-color: rgba(6, 182, 212, 0.40);
+    color: var(--color-neon-cyan);
+}
+
+
+/* --------------------------------------------------------------------------
+  11. GRADIENTES Y EFECTOS DE TEXTO
+   -------------------------------------------------------------------------- */
+
+/* Texto con gradiente de marca */
+.gradient-text {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Variante cyan→primary */
+.gradient-text-cyan {
+    background: linear-gradient(90deg, var(--color-neon-cyan), var(--color-primary-fixed-dim));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Borde con gradiente (usado en el hero de index) */
+.gradient-border {
+    border: 1px solid transparent;
+    background-image: linear-gradient(var(--color-surface-container), var(--color-surface-container)),
+    linear-gradient(to right, var(--color-neon-cyan), var(--color-neon-magenta));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* Glow de texto */
+.glow-text-cyan {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.50);
+}
+
+.glow-text-magenta {
+    text-shadow: 0 0 10px rgba(217, 70, 239, 0.50);
+}
+
+.glow-text-primary {
+    text-shadow: 0 0 10px rgba(221, 183, 255, 0.50);
+}
+
+/* Línea decorativa inferior de sección */
+.section-divider {
+    height: 1px;
+    background: var(--gradient-surface);
+    position: relative;
+}
+
+.section-divider::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-neon-magenta);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--color-neon-magenta);
+}
+
+/* Línea de timeline */
+.timeline-line {
+    background: linear-gradient(to bottom, var(--color-neon-cyan) 0%, var(--color-neon-magenta) 50%, rgba(221, 183, 255, 0.10) 100%);
+}
+
+/* Línea decorativa de circuito (subpáginas) */
+.circuit-line,
+.cyber-circuit-line,
+.cyber-line {
+    background: var(--gradient-primary);
+    width: 2px;
+}
+
+
+/* --------------------------------------------------------------------------
+  12. TIMELINE DE EXPERIENCIA
+   -------------------------------------------------------------------------- */
+
+.timeline {
+    position: relative;
+    padding-left: 32px;
+    margin-top: 32px;
+}
+
+/* Línea vertical */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-glass-border);
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 33%;
+    background: linear-gradient(to bottom, var(--color-neon-cyan), var(--color-neon-magenta));
+    box-shadow: 0 0 10px var(--color-neon-cyan);
+}
+
+/* Nodo del timeline */
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    z-index: 10;
+    left: -8px;
+    top: 0;
+}
+
+.timeline-dot--cyan {
+    background-color: var(--color-neon-cyan);
+    box-shadow: 0 0 15px var(--color-neon-cyan);
+}
+
+.timeline-dot--magenta {
+    background-color: var(--color-surface-container);
+    border: 2px solid var(--color-neon-magenta);
+    box-shadow: 0 0 10px rgba(217, 70, 239, 0.50);
+}
+
+.timeline-dot--primary {
+    background-color: var(--color-surface-container);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 0 10px rgba(221, 183, 255, 0.50);
+}
+
+
+/* --------------------------------------------------------------------------
+  13. FORMULARIO DE CONTACTO
+   -------------------------------------------------------------------------- */
+
+.form-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-base);
+}
+
+.form-label--cyan {
+    color: var(--color-neon-cyan);
+}
+
+.form-label--magenta {
+    color: var(--color-neon-magenta);
+}
+
+.form-label--primary {
+    color: var(--color-primary);
+}
+
+.form-label--muted {
+    color: var(--color-on-surface-variant);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    background-color: rgba(44, 41, 45, 0.50);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-sm);
+    padding: calc(var(--space-base) * 1.5);
+    color: var(--color-on-background);
+    font-family: var(--font-body);
+    font-size: 16px;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    opacity: 0.35;
+    color: var(--color-on-surface-variant);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--color-neon-cyan);
+    box-shadow: 0 0 0 1px var(--color-neon-cyan);
+}
+
+.form-textarea {
+    resize: none;
+}
+
+.form-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+
+/* --------------------------------------------------------------------------
+  14. FOOTER
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+    background-color: rgba(16, 13, 17, 0.80);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--color-glass-border);
+    width: 100%;
+    margin-top: 80px;
+}
+
+.site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-gutter);
+    padding: var(--space-gutter) var(--space-margin-mobile);
+    max-width: var(--container-max);
+    margin-inline: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.site-footer__brand {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    display: block;
+    margin-bottom: var(--space-base);
+}
+
+.site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-gutter);
+    justify-content: center;
+}
+
+.site-footer__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-on-surface-variant);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.site-footer__link:hover {
+    color: var(--color-neon-cyan);
+}
+
+
+/* --------------------------------------------------------------------------
+  15. UTILIDADES COMPARTIDAS
+   -------------------------------------------------------------------------- */
+
+/* Contenedor de sección */
+.section-wrapper {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--space-margin-mobile);
+    padding-block: 80px;
+}
+
+/* Cabecera numerada de sección */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-gutter) / 2;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.section-header__number {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.section-header__title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+    color: var(--color-on-background);
+    white-space: nowrap;
+}
+
+.section-header__line {
+    height: 1px;
+    flex: 1;
+    background: var(--gradient-surface);
+    position: relative;
+}
+
+.section-header__line::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.section-header__line--cyan::after {
+    background-color: var(--color-neon-cyan);
+    box-shadow: 0 0 8px var(--color-neon-cyan);
+}
+
+.section-header__line--magenta::after {
+    background-color: var(--color-neon-magenta);
+    box-shadow: 0 0 8px var(--color-neon-magenta);
+}
+
+.section-header__line--primary::after {
+    background-color: var(--color-primary-fixed-dim);
+    box-shadow: 0 0 8px var(--color-primary-fixed-dim);
+}
+
+/* Badge de estado ("AI powered" etc.) */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-base);
+    padding: 4px calc(var(--space-base) * 1.5);
+    background-color: var(--color-surface-container-high);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.10);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--color-on-surface-variant);
+}
+
+/* Lista estilo "bullet neon" */
+.neon-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.neon-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-base);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-on-surface-variant);
+}
+
+.neon-list__bullet {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 9px;
+    background-color: var(--color-neon-cyan);
+    box-shadow: 0 0 5px var(--color-neon-cyan);
+}
+
+/* Decorador de esquina de formulario */
+.form-corner-cyan {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 80px;
+    height: 1px;
+    background-color: var(--color-neon-cyan);
+    box-shadow: 0 0 10px var(--color-neon-cyan);
+}
+
+.form-corner-magenta {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 80px;
+    height: 1px;
+    background-color: var(--color-neon-magenta);
+    box-shadow: 0 0 10px var(--color-neon-magenta);
+}
+
+/* Punto de glow pulsante (indicadores de "online") */
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-success);
+    box-shadow: 0 0 6px var(--color-success);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+
+/* --------------------------------------------------------------------------
+  16. RESPONSIVE / MOBILE
+   -------------------------------------------------------------------------- */
+
+/* Tablet y superior (≥768px) */
+@media (min-width: 768px) {
+    .section-wrapper {
+        padding-inline: var(--space-margin-desktop);
+    }
+
+    .site-header__inner {
+        padding-inline: var(--space-margin-desktop);
+    }
+
+    .site-footer__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding-inline: var(--space-margin-desktop);
+    }
+
+    .site-footer__links {
+        justify-content: flex-end;
+    }
+
+    .btn-download-cv {
+        display: flex;
+    }
+}
+
+/* Desktop (≥1024px) */
+@media (min-width: 1024px) {
+    .site-nav {
+        display: flex;
+    }
+
+    .btn-menu-toggle {
+        display: none;
+    }
+
+    .timeline {
+        padding-left: 0;
+    }
+}
+
+/* Contenedor centrado con max-width */
+@media (min-width: 1264px) {
+    .section-wrapper {
+        padding-inline: var(--space-margin-desktop);
+    }
+}
+
+/* ============================================================
+   BOOTSTRAP × TAILWIND — FIX DEFINITIVO (PARCHE DE COLISIÓN)
+   ============================================================ */
+
+/* 0. Restauración Forense de Restricciones Geométricas (Logo y Body) */
+.navbar-brand img {
+    max-width: none !important;
+    width: auto !important;
+    height: 40px !important;
+    object-fit: contain !important;
+}
+
+body > main {
+    padding-top: 64px !important;
+}
+
+/* 1. Anular la inyección de visibilidad de Tailwind sobre los componentes de Bootstrap */
+.navbar-collapse.collapse,
+.navbar-collapse.collapsing {
+    visibility: visible !important;
+}
+
+/* 2. Refactorización del Menú Móvil (Posicionamiento Absoluto) */
+@media (max-width: 991.98px) {
+    #navbarMenu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        background: rgba(21, 17, 27, 0.98);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        /* Escondido por defecto mediante opacidad para transición suave */
+        opacity: 0;
+        visibility: hidden !important;
+        transition: opacity 0.3s ease, visibility 0.3s ease !important;
+    }
+
+    /* Cuando Bootstrap inyecta JS */
+    #navbarMenu.show {
+        display: block !important;
+        opacity: 1;
+        visibility: visible !important;
+        height: auto !important;
+        padding-bottom: 16px;
+    }
+
+    #navbarMenu.collapsing {
+        height: auto !important;
+        transition: none !important; /* Evita el salto de layout del JS de Bootstrap */
+    }
+
+    .navbar-collapse .nav-link {
+        padding: 16px 24px !important;
+        color: #cfc2d6 !important;
+        border-left: 2px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    .navbar-collapse .nav-link:hover {
+        background: rgba(0, 243, 255, 0.05);
+        border-left: 2px solid #00f3ff;
+    }
+
+    /* Estructura del Dropdown "Servicios" en Móvil */
+    #navbarMenu.show .dropdown-menu {
+        display: block !important;
+        position: static !important;
+        float: none !important;
+        box-shadow: none !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+        border: none !important;
+        border-left: 2px solid rgba(217, 70, 239, 0.4) !important; /* Borde Magenta táctico */
+        margin: 4px 24px 12px 24px !important;
+        padding: 8px 0 !important;
+        border-radius: 0 8px 8px 0;
+    }
+
+    #navbarMenu.show .dropdown-menu .dropdown-item {
+        color: #cfc2d6 !important;
+        font-size: 13px;
+        padding: 10px 16px !important;
+    }
+}
