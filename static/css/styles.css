@@ -1272,10 +1272,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
-   BOOTSTRAP × TAILWIND — FIX DEFINITIVO (PARCHE DE COLISIÓN)
+   BOOTSTRAP × TAILWIND — FIX DEFINITIVO (RESTAURACIÓN TOTAL)
    ============================================================ */
 
-/* 0. Restauración Forense de Restricciones Geométricas (Logo y Body) */
+/* 0. Restauración Forense de Restricciones Geométricas */
 .navbar-brand img {
     max-width: none !important;
     width: auto !important;
@@ -1287,13 +1287,55 @@ body > main {
     padding-top: 64px !important;
 }
 
-/* 1. Anular la inyección de visibilidad de Tailwind sobre los componentes de Bootstrap */
+/* 1. Anular colisión de visibilidad de Tailwind */
 .navbar-collapse.collapse,
 .navbar-collapse.collapsing {
     visibility: visible !important;
 }
 
-/* 2. Refactorización del Menú Móvil (Posicionamiento Absoluto) */
+/* 2. DOMINIO ESCRITORIO (Restauración de Flexbox y Dropdown Absoluto) */
+@media (min-width: 992px) {
+    #navbarMenu {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex: 1;
+    }
+
+    .navbar-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 auto !important; /* Mantiene los links al centro */
+    }
+
+    .navbar .dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Centrado perfecto bajo la palabra Servicios */
+        font-size: 13px;
+        min-width: 200px;
+        padding: 8px;
+        display: none; /* Oculto por defecto, el hover lo activa */
+    }
+
+    /* Vector de Optimización: Dropdown por Hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block !important;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 0;
+    }
+
+    .navbar-toggler {
+        display: none !important;
+    }
+}
+
+/* 3. DOMINIO MÓVIL (El parche táctico) */
 @media (max-width: 991.98px) {
     #navbarMenu {
         position: absolute !important;
@@ -1307,13 +1349,11 @@ body > main {
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         border-bottom: 1px solid rgba(0, 243, 255, 0.2);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-        /* Escondido por defecto mediante opacidad para transición suave */
         opacity: 0;
         visibility: hidden !important;
         transition: opacity 0.3s ease, visibility 0.3s ease !important;
     }
 
-    /* Cuando Bootstrap inyecta JS */
     #navbarMenu.show {
         display: block !important;
         opacity: 1;
@@ -1324,7 +1364,7 @@ body > main {
 
     #navbarMenu.collapsing {
         height: auto !important;
-        transition: none !important; /* Evita el salto de layout del JS de Bootstrap */
+        transition: none !important;
     }
 
     .navbar-collapse .nav-link {
@@ -1339,7 +1379,6 @@ body > main {
         border-left: 2px solid #00f3ff;
     }
 
-    /* Estructura del Dropdown "Servicios" en Móvil */
     #navbarMenu.show .dropdown-menu {
         display: block !important;
         position: static !important;
@@ -1347,7 +1386,7 @@ body > main {
         box-shadow: none !important;
         background: rgba(0, 0, 0, 0.2) !important;
         border: none !important;
-        border-left: 2px solid rgba(217, 70, 239, 0.4) !important; /* Borde Magenta táctico */
+        border-left: 2px solid rgba(217, 70, 239, 0.4) !important;
         margin: 4px 24px 12px 24px !important;
         padding: 8px 0 !important;
         border-radius: 0 8px 8px 0;

@@ -130,16 +130,25 @@
         }
     </script>
     <style>
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: #16111b;
             background-image: radial-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px);
             background-size: 24px 24px;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
         @media (max-width: 991px) {
-            #inicio { min-height: auto !important; }
-            #inicio .flex-1:last-child { display: none !important; }
+            #inicio {
+                min-height: auto !important;
+            }
+
+            #inicio .flex-1:last-child {
+                display: none !important;
+            }
         }
     </style>
     <meta name="description"
@@ -161,13 +170,15 @@
 <div class="particle w-24 h-24 bottom-[20%] left-[20%] animate-float" style="animation-delay: 4s;"></div>
 <!-- TopNavBar -->
 <!-- TopNavBar Bootstrap -->
-<nav class="navbar navbar-expand-lg fixed-top" style="background:rgba(21,17,27,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.1);box-shadow:0 0 20px rgba(0,243,255,0.1);z-index:1030;">
+<nav class="navbar navbar-expand-lg fixed-top"
+     style="background:rgba(21,17,27,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.1);box-shadow:0 0 20px rgba(0,243,255,0.1);z-index:1030;">
     <div class="container-fluid px-4 px-md-5">
 
         <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" style="text-decoration:none;">
             <img alt="DigiNucleo Logo" height="40" style="border-radius:6px;box-shadow:0 0 10px rgba(0,243,255,0.2);"
                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTbc-lMaN-YO8zwINn0dYOxCSxj8ZyiDLixpKDAdZy6tvKQuVB1XsQTybREKzH50-bUVGEtyApZiqtjMO3GjNb1rak0JV2lbH3hu-AzE6WFZ0vkjnW-fUo6AnxaZFzG6JAv9GsOHEqTCF_KdZZxOxHA4CA_-zE5oPI1KS1a9k-Oo_-wD7aAWovFDmoGkExyNMN6O36NkBv-dxv5cr8WdRSFhD-VktGO4ei9giCTUMqvf9hKMCcoLIwnIn4M5mdZIgHFp2egSx-Q">
-            <span class="d-none d-md-block" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:600;background:linear-gradient(to right,#ddb7ff,#00f3ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Carlos Gutiérrez</span>
+            <span class="d-none d-md-block"
+                  style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:600;background:linear-gradient(to right,#ddb7ff,#00f3ff,#ff00ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Carlos Gutiérrez</span>
         </a>
 
         <button class="navbar-toggler border-0" type="button"
@@ -190,9 +201,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html#experiencia" style="color:#cfc2d6;" onmouseover="this.style.color='#00f3ff'" onmouseout="this.style.color='#cfc2d6'">Experiencia</a>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="index.html#portafolio" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false" style="color:#cfc2d6;">Servicios</a>
+                       data-bs-toggle="dropdown" aria-expanded="false" style="color:#cfc2d6;"
+                       onclick="window.location.href=this.href;">Servicios</a>
                     <ul class="dropdown-menu" style="background:rgba(35,30,39,0.97);border:1px solid rgba(255,255,255,0.1);border-radius:12px;">
                         <li><a class="dropdown-item" href="soporte-tecnico-y-mantenimiento.html" style="color:#cfc2d6;font-family:'JetBrains Mono',monospace;font-size:13px;" onmouseover="this.style.color='#00f3ff';this.style.background='rgba(0,243,255,0.08)'" onmouseout="this.style.color='#cfc2d6';this.style.background='transparent'">🔧 Soporte Técnico</a></li>
                         <li><a class="dropdown-item" href="alto-rendimiento.html" style="color:#cfc2d6;font-family:'JetBrains Mono',monospace;font-size:13px;" onmouseover="this.style.color='#39FF14';this.style.background='rgba(57,255,20,0.08)'" onmouseout="this.style.color='#cfc2d6';this.style.background='transparent'">🎮 Alto Rendimiento</a></li>
@@ -200,6 +213,7 @@
                         <li><a class="dropdown-item" href="rrss-contenido.html" style="color:#cfc2d6;font-family:'JetBrains Mono',monospace;font-size:13px;" onmouseover="this.style.color='#FFD700';this.style.background='rgba(255,215,0,0.08)'" onmouseout="this.style.color='#cfc2d6';this.style.background='transparent'">📱 Redes Sociales</a></li>
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="index.html#contacto-new" style="color:#cfc2d6;" onmouseover="this.style.color='#00f3ff'" onmouseout="this.style.color='#cfc2d6'">Contacto</a>
                 </li>
@@ -210,7 +224,8 @@
                style="padding:8px 20px;border:1px solid rgba(255,255,255,0.1);background:rgba(44,41,45,0.5);color:#eadfed;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;border-radius:8px;text-decoration:none;white-space:nowrap;"
                onmouseover="this.style.color='#00f3ff';this.style.borderColor='rgba(0,243,255,0.5)'"
                onmouseout="this.style.color='#eadfed';this.style.borderColor='rgba(255,255,255,0.1)'">
-                <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">download</span> Descargar CV
+                <span style="font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">download</span>
+                Descargar CV
             </a>
         </div>
     </div>
