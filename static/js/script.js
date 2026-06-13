@@ -473,7 +473,7 @@ function initActiveNavLinks() {
                 link.classList.toggle('nav-link--active', isActive);
             });
         });
-    }, { threshold: 0.4, rootMargin: '-80px 0px -40% 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     sections.forEach(s => observer.observe(s));
 }
@@ -688,3 +688,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Log de versión
     console.log('%c⚡ DigiNucleo v2.0 — script.js cargado', 'color:#00f3ff;font-family:monospace;font-size:13px;');
 });
+
