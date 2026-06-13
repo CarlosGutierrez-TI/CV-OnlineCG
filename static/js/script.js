@@ -575,7 +575,7 @@ function initWelcomeToast() {
   `;
     toast.innerHTML = `
     <span style="color:#00f3ff;font-family:'Material Symbols Outlined';font-size:18px;vertical-align:middle;">waving_hand</span>
-    Bienvenido a DigiNucleo — <strong style="color:#ddb7ff;">Carlos Gutierrez</strong>
+    Bienvenido al perfil de <strong style="color:#ddb7ff;">Carlos Gutierrez</strong>
     <button onclick="this.parentElement.remove()" style="background:none;border:none;color:#cfc2d6;cursor:pointer;font-size:16px;padding:0 0 0 8px;">×</button>
   `;
     document.body.appendChild(toast);

@@ -111,8 +111,7 @@
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
-<body class="bg-background text-on-background antialiased selection:bg-neon-cyan/30 selection:text-neon-cyan">
-
+<body class="bg-background text-on-background antialiased selection:bg-neon-cyan/30 selection:text-neon-cyan overflow-x-hidden">
 <!-- ═══════════════════════════════════════════════
      PARTICLES — generadas por script.js
      ═══════════════════════════════════════════════ -->
@@ -168,51 +167,44 @@
 <!-- ═══════════════════════════════════════════════
      MAIN CONTENT
      ═══════════════════════════════════════════════ -->
-<main class="w-full flex flex-col items-center">
-
+<main class="w-full">
     <!-- ── HERO ──────────────────────────────────── -->
     <section id="inicio"
-             class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-32 flex flex-col lg:flex-row items-center gap-12 min-h-[819px] animate-slide-up">
+             class="w-full max-w-container-max mx-auto px-6 sm:px-8 md:px-16 py-24 md:py-32 flex flex-col lg:flex-row items-center gap-12 min-h-[819px] animate-slide-up box-border overflow-hidden">
 
         <!-- Columna izquierda: texto -->
-        <div class="flex-1 flex flex-col items-start gap-6 relative z-10">
+        <div class="flex-1 flex flex-col items-start gap-5 md:gap-6 relative z-10 w-full max-w-full overflow-hidden px-1 sm:px-0">
 
-            <!-- Badge táctico -->
-            <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-glass-border rounded-full shadow-[0_0_10px_rgba(6,182,212,0.1)]">
-                <span class="material-symbols-outlined text-neon-cyan text-[16px]">memory</span>
-                <span class="font-label-mono text-label-mono text-on-surface-variant">Productividad IA &amp; Estrategia Top-Down</span>
+            <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 bg-surface-container-high border border-glass-border rounded-2xl shadow-[0_0_10px_rgba(6,182,212,0.1)] max-w-full">
+                <span class="material-symbols-outlined text-neon-cyan text-[16px] shrink-0">memory</span>
+                <span class="font-label-mono text-label-mono text-on-surface-variant text-[11px] md:text-[14px] whitespace-normal break-words">Productividad IA & Estrategia Top-Down</span>
             </div>
 
-            <!-- H1 con efecto glitch -->
-            <h1 class="font-headline-xl text-headline-xl text-on-background leading-tight">
-                Carlos Antonio <br><span class="gradient-text">Gutierrez Toledo</span>
+            <h1 class="font-headline-xl text-[32px] md:text-[48px] text-on-background leading-tight max-w-full break-words font-bold">
+                Carlos Antonio <br class="hidden md:block"><span class="gradient-text">Gutierrez Toledo</span>
             </h1>
 
-            <!-- Título animado (typed) -->
-            <div class="flex flex-col gap-2 border-l-4 border-neon-cyan pl-5 py-2 mt-2">
-                <h2 class="text-[26px] md:text-[32px] font-bold text-on-background leading-none font-headline-lg">
-                    <span id="typed-role" class="text-neon-cyan glow-text-cyan"></span>
+            <div class="flex flex-col gap-2 border-l-4 border-neon-cyan pl-4 md:pl-5 py-2 mt-1 max-w-full">
+                <h2 class="text-[22px] md:text-[32px] font-bold text-on-background leading-none font-headline-lg max-w-full break-words">
+                    <span id="typed-role" class="text-neon-cyan glow-text-cyan whitespace-normal"></span>
                 </h2>
             </div>
 
-            <!-- Descripción -->
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mt-2">
+            <p class="font-body-lg text-[15px] md:text-[18px] text-on-surface-variant max-w-2xl leading-relaxed mt-2 max-w-full">
                 Arquitecto de soluciones tecnológicas. Diagnostico y erradico cuellos de botella operativos
                 cruzando diferentes dominios: la física del hardware, la seguridad perimetral de redes
                 y la lógica del código backend.
             </p>
 
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-3 mt-4">
-                <span class="tech-tag">Hardware &amp; Redes</span>
-                <span class="tech-tag tech-tag--primary">Workspace &amp; DMARC</span>
-                <span class="tech-tag tech-tag--magenta">Marketing &amp; IA Gemini</span>
-                <span class="tech-tag">Node.js &amp; SQL</span>
+            <div class="flex flex-wrap gap-2 mt-2 max-w-full">
+                <span class="tech-tag text-[11px] md:text-[12px]">Hardware & Redes</span>
+                <span class="tech-tag tech-tag--primary text-[11px] md:text-[12px]">Workspace & DMARC</span>
+                <span class="tech-tag tech-tag--magenta text-[11px] md:text-[12px]">Marketing & IA Gemini</span>
+                <span class="tech-tag text-[11px] md:text-[12px]">Node.js & SQL</span>
             </div>
 
-            <!-- CTA -->
-            <div class="flex gap-4 mt-6">
-                <a class="btn-primary" href="#experiencia">
+            <div class="flex flex-wrap gap-4 mt-4 max-w-full">
+                <a class="btn-primary text-[13px] md:text-[14px]" href="#experiencia">
                     Ver Experiencia Operativa
                     <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
                 </a>
@@ -640,11 +632,165 @@
         </div>
     </section>
 
+    <!-- ── NÚCLEO LOCAL ──────────────────────────── -->
+    <section id="nucleo-local" class="section-wrapper animate-on-scroll">
+
+        <div class="section-header">
+            <span class="section-header__number text-neon-cyan">6.</span>
+            <h2 class="section-header__title">Núcleo Local</h2>
+            <div class="section-header__line section-header__line--cyan"></div>
+        </div>
+
+        <!-- Fila superior: info + mapa -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+
+            <!-- Columna izquierda: info del negocio -->
+            <div class="flex flex-col gap-6">
+                <div class="glass-card p-8 rounded-xl animate-on-scroll" data-tilt>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-neon-cyan">location_on</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-lg text-headline-lg text-on-background">DigiNúcleo</h3>
+                            <p class="font-label-mono text-label-mono text-on-surface-variant">Servicio de informática · Chile</p>
+                        </div>
+                    </div>
+                    <a href="https://share.google/DzkEjDcCXmE3dKH5Y" target="_blank" rel="noopener"
+                       class="flex items-center gap-3 mb-6 group w-fit">
+                        <span class="font-headline-lg text-[28px] font-bold text-on-background">4.9</span>
+                        <div class="flex gap-0.5">
+                            <span class="text-yellow-400 text-xl">★</span>
+                            <span class="text-yellow-400 text-xl">★</span>
+                            <span class="text-yellow-400 text-xl">★</span>
+                            <span class="text-yellow-400 text-xl">★</span>
+                            <span class="text-yellow-400 text-xl">★</span>
+                        </div>
+                        <span class="font-label-mono text-label-mono text-neon-cyan group-hover:underline">8 opiniones en Google</span>
+                    </a>
+                    <div class="flex flex-col gap-3 mb-6">
+                        <div class="flex items-start gap-3 text-on-surface-variant font-body-md text-body-md">
+                            <span class="material-symbols-outlined text-neon-cyan text-[18px] mt-0.5">home_pin</span>
+                            Senda B 1017, La Pintana, Región Metropolitana
+                        </div>
+                        <div class="flex items-start gap-3 text-on-surface-variant font-body-md text-body-md">
+                            <span class="material-symbols-outlined text-neon-cyan text-[18px] mt-0.5">schedule</span>
+                            <div>
+                                <span class="text-on-background font-bold">Lun–Jue</span> 8:00–18:00 &nbsp;·&nbsp;
+                                <span class="text-on-background font-bold">Vie</span> 8:00–16:00 &nbsp;·&nbsp;
+                                <span class="text-on-background font-bold">Dom</span> 8:00–15:00
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 text-on-surface-variant font-body-md text-body-md">
+                            <span class="material-symbols-outlined text-neon-cyan text-[18px]">phone</span>
+                            <a href="tel:+56977608614" class="hover:text-neon-cyan transition-colors">+56 9 7760 8614</a>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://share.google/47vQ0RgihKcQ5XkEp" target="_blank" rel="noopener"
+                           class="flex items-center gap-2 bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan px-4 py-2 rounded font-label-mono text-label-mono hover:bg-neon-cyan/20 transition-all">
+                            <span class="material-symbols-outlined text-[16px]">map</span>
+                            Ver en Google Maps
+                        </a>
+                        <a href="https://share.google/DzkEjDcCXmE3dKH5Y" target="_blank" rel="noopener"
+                           class="flex items-center gap-2 bg-primary-fixed-dim/10 border border-primary-fixed-dim/30 text-primary-fixed-dim px-4 py-2 rounded font-label-mono text-label-mono hover:bg-primary-fixed-dim/20 transition-all">
+                            <span class="material-symbols-outlined text-[16px]">star</span>
+                            Dejar una reseña
+                        </a>
+                        <a href="https://api.whatsapp.com/send/?phone=56977608614&text=Hola+Carlos%2C+vengo+desde+tu+perfil.+Necesito+una+cotizaci%C3%B3n+para%3A&type=phone_number&app_absent=0" target="_blank" rel="noopener"
+                           class="flex items-center gap-2 bg-success-emerald/10 border border-success-emerald/30 text-success-emerald px-4 py-2 rounded font-label-mono text-label-mono hover:bg-success-emerald/20 transition-all">
+                            <span class="material-symbols-outlined text-[16px]">chat</span>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna derecha: mapa -->
+            <div class="animate-on-scroll sticky top-24">
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8136251815386!2d-70.647791!3d-33.584188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d91f1d158f37%3A0xb1685f0336b9634f!2sDigiN%C3%BAcleo!5e0!3m2!1ses-419!2scl!4v1781293908320!5m2!1ses-419!2scl"
+                            width="100%"
+                            height="480"
+                            style="border:0; display:block; filter: invert(90%) hue-rotate(180deg);"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación DigiNúcleo en Google Maps">
+                    </iframe>
+                    <div class="p-4 border-t border-glass-border flex items-center justify-between">
+                        <span class="font-label-mono text-label-mono text-on-surface-variant">Senda B 1017, La Pintana</span>
+                        <a href="https://share.google/47vQ0RgihKcQ5XkEp" target="_blank" rel="noopener"
+                           class="font-label-mono text-label-mono text-neon-cyan hover:underline flex items-center gap-1">
+                            Abrir <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Fila inferior: reseñas a ancho completo -->
+        <div class="flex flex-col gap-6 animate-on-scroll">
+
+            <!-- Título -->
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-[2px] bg-neon-cyan"></div>
+                <h4 class="font-headline-lg text-[18px] font-bold text-on-background uppercase tracking-widest">
+                    Lo que dicen los <span class="gradient-text-cyan">clientes</span>
+                </h4>
+                <div class="flex-1 h-[1px] bg-glass-border"></div>
+            </div>
+
+            <!-- Fila 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-xl animate-on-scroll flex flex-col gap-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-on-background">Alejandro Guzmán</span>
+                        <div class="flex gap-0.5 text-yellow-400">★★★★★</div>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">"Excelente servicio. Empatía para entender y resolver problemas."</p>
+                    <span class="font-label-mono text-[11px] text-on-surface-variant/50">Hace 5 semanas</span>
+                </div>
+                <div class="glass-card p-6 rounded-xl animate-on-scroll flex flex-col gap-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-on-background">Kote</span>
+                        <div class="flex gap-0.5 text-yellow-400">★★★★★</div>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">"Solicité servicio de limpieza y cambio de gabinete y la atención fue 10/10. Totalmente recomendado."</p>
+                    <span class="font-label-mono text-[11px] text-on-surface-variant/50">Hace 6 semanas</span>
+                </div>
+            </div>
+
+            <!-- Fila 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-xl animate-on-scroll flex flex-col gap-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-on-background">lil_jey2413</span>
+                        <div class="flex gap-0.5 text-yellow-400">★★★★★</div>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">"Confiable y profesional, realizó el trabajo de forma eficiente y dentro de lo acordado. El equipo quedó funcionando impecable. Recomendadísimo, 10/10."</p>
+                    <span class="font-label-mono text-[11px] text-on-surface-variant/50">Hace 12 semanas</span>
+                </div>
+                <div class="glass-card p-6 rounded-xl animate-on-scroll flex flex-col gap-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-on-background">Rubén Donaire</span>
+                        <div class="flex gap-0.5 text-yellow-400">★★★★★</div>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">"10/10 servicio transparente, flexible y confiable. Además de dejar impecable mi PC fue comprensivo en temas de horario."</p>
+                    <span class="font-label-mono text-[11px] text-on-surface-variant/50">Hace 13 semanas</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- ── CONTACTO ──────────────────────────────── -->
     <section id="contacto-new" class="section-wrapper animate-on-scroll">
 
         <div class="section-header">
-            <span class="section-header__number text-neon-magenta">6.</span>
+            <span class="section-header__number text-neon-magenta">7.</span>
             <h2 class="section-header__title">Contacto</h2>
             <div class="section-header__line section-header__line--magenta"></div>
         </div>
@@ -728,10 +874,11 @@
      FOOTER
      ═══════════════════════════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
-    <div class="site-footer__inner">
-        <div class="flex flex-row items-center gap-4">
-            <span class="site-footer__brand gradient-text">DigiNucleo</span>
-            <div class="flex gap-2 flex-wrap">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-8 py-8 px-6 lg:pl-10 lg:pr-[96px] w-full max-w-full mx-auto">
+
+        <div class="flex flex-col xl:flex-row items-center xl:items-start gap-4 justify-self-center lg:justify-self-start">
+            <span class="font-headline-xl text-[28px] font-bold gradient-text whitespace-nowrap">DigiNucleo</span>
+            <div class="flex gap-2 flex-wrap justify-center">
                 <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded font-label-mono text-[10px] text-on-surface-variant">
                     <span class="material-symbols-outlined text-xs">verified</span>Certificado GOOGLE
                 </div>
@@ -741,24 +888,25 @@
             </div>
         </div>
 
-        <p class="font-body-md text-on-surface-variant opacity-60 text-center whitespace-nowrap">
+        <p class="font-body-md text-on-surface-variant opacity-60 text-center whitespace-nowrap justify-self-center">
             © 2026 Carlos Gutierrez Toledo
         </p>
 
-        <div class="site-footer__links">
-            <a class="site-footer__link" href="https://www.linkedin.com/in/carlosgutierreztoledo/" target="_blank" rel="noopener">
-                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="" class="w-5 h-5" aria-hidden="true">LinkedIn
+        <div class="grid grid-cols-2 gap-x-4 gap-y-4 lg:flex lg:flex-row lg:items-center lg:gap-4 xl:gap-6 justify-self-center lg:justify-self-end lg:flex-nowrap lg:whitespace-nowrap w-full sm:w-auto mt-4 lg:mt-0">
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-all flex items-center gap-2 font-label-mono text-[13px] md:text-[14px] justify-self-start lg:justify-self-auto" href="https://www.linkedin.com/in/carlosgutierreztoledo/" target="_blank" rel="noopener">
+                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="LinkedIn" class="w-5 h-5" aria-hidden="true">LinkedIn
             </a>
-            <a class="site-footer__link" href="https://www.youtube.com/@diginucleo" target="_blank" rel="noopener">
-                <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="" class="w-5 h-5" aria-hidden="true">YouTube
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2 font-label-mono text-[13px] md:text-[14px] justify-self-start lg:justify-self-auto" href="https://www.youtube.com/@diginucleo" target="_blank" rel="noopener">
+                <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="YouTube" class="w-5 h-5" aria-hidden="true">YouTube
             </a>
-            <a class="site-footer__link" href="https://www.instagram.com/Diginucleo" target="_blank" rel="noopener">
-                <img src="https://api.iconify.design/skill-icons:instagram.svg" alt="" class="w-5 h-5" aria-hidden="true">Instagram
+            <a class="text-on-surface-variant hover:text-primary transition-all flex items-center gap-2 font-label-mono text-[13px] md:text-[14px] justify-self-start lg:justify-self-auto" href="https://www.instagram.com/Diginucleo" target="_blank" rel="noopener">
+                <img src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" class="w-5 h-5" aria-hidden="true">Instagram
             </a>
-            <a class="site-footer__link" href="mailto:carlosgutitoledo@gmail.com">
-                <img src="https://api.iconify.design/skill-icons:gmail-light.svg" alt="" class="w-5 h-5" aria-hidden="true">Email
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-all flex items-center gap-2 font-label-mono text-[13px] md:text-[14px] justify-self-start lg:justify-self-auto" href="mailto:carlosgutitoledo@gmail.com">
+                <img src="https://api.iconify.design/skill-icons:gmail-light.svg" alt="Email" class="w-5 h-5" aria-hidden="true">Email
             </a>
         </div>
+
     </div>
 </footer>
 

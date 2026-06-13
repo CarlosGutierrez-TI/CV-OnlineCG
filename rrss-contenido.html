@@ -9,6 +9,7 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
           rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/styles.css">
     <script id="tailwind-config">
         tailwind.config = {
@@ -117,73 +118,52 @@
 </head>
 <body class="font-body-md text-body-md antialiased">
 <!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-md border-b border-glass-border shadow-[0_0_20px_rgba(0,243,255,0.1)] transition-all duration-300 ease-in-out">
-    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+<div id="particles-container" aria-hidden="true"></div>
 
-        <!-- Brand Logo + Nombre -->
-        <a class="flex items-center gap-3 h-10 hover:opacity-80 transition-opacity" href="index.html">
-            <img alt="DigiNucleo Logo" class="h-full object-contain rounded-md shadow-[0_0_10px_rgba(0,243,255,0.2)]"
-                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTbc-lMaN-YO8zwINn0dYOxCSxj8ZyiDLixpKDAdZy6tvKQuVB1XsQTybREKzH50-bUVGEtyApZiqtjMO3GjNb1rak0JV2lbH3hu-AzE6WFZ0vkjnW-fUo6AnxaZFzG6JAv9GsOHEqTCF_KdZZxOxHA4CA_-zE5oPI1KS1a9k-Oo_-wD7aAWovFDmoGkExyNMN6O36NkBv-dxv5cr8WdRSFhD-VktGO4ei9giCTUMqvf9hKMCcoLIwnIn4M5mdZIgHFp2egSx-Q">
-            <span class="font-label-mono text-[22px] gradient-text whitespace-nowrap hidden md:block">Carlos Gutiérrez</span>
+<nav class="navbar navbar-expand-lg fixed-top" aria-label="Navegación principal">
+    <div class="container-fluid px-4 px-md-5">
+        <a class="navbar-brand" href="index.html">
+            <img class="site-header__logo-img"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTbc-lMaN-YO8zwINn0dYOxCSxj8ZyiDLixpKDAdZy6tvKQuVB1XsQTybREKzH50-bUVGEtyApZiqtjMO3GjNb1rak0JV2lbH3hu-AzE6WFZ0vkjnW-fUo6AnxaZFzG6JAv9GsOHEqTCF_KdZZxOxHA4CA_-zE5oPI1KS1a9k-Oo_-wD7aAWovFDmoGkExyNMN6O36NkBv-dxv5cr8WdRSFhD-VktGO4ei9giCTUMqvf9hKMCcoLIwnIn4M5mdZIgHFp2egSx-Q"
+                 alt="DigiNucleo Logo" width="40" height="40">
+            <span class="navbar-brand-text d-none d-md-block">Carlos Gutiérrez</span>
         </a>
-
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex gap-2 xl:gap-8 items-center font-label-mono text-[14px]">
-            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
-               href="index.html">Inicio</a>
-            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
-               href="index.html#quien-soy">Quién Soy</a>
-            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
-               href="index.html#formacion">Formación</a>
-            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
-               href="index.html#experiencia">Experiencia</a>
-
-            <!-- Dropdown Servicios -->
-            <div class="relative group">
-                <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg flex items-center gap-1 cursor-pointer font-medium whitespace-nowrap"
-                   href="index.html#portafolio">
-                    Servicios <span class="material-symbols-outlined text-[18px]">expand_more</span>
-                </a>
-
-                <div class="absolute top-full left-0 mt-2 w-max bg-surface-container/85 backdrop-blur-xl border border-glass-border rounded-xl shadow-[0_0_20px_rgba(0,243,255,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 z-50">
-                    <a class="text-on-surface-variant hover:text-neon-cyan hover:bg-neon-cyan/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
-                       href="soporte-tecnico-y-mantenimiento.html"><span class="material-symbols-outlined text-[16px]">build</span>
-                        Soporte Técnico</a>
-                    <a class="text-on-surface-variant hover:text-[#39FF14] hover:bg-[#39FF14]/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
-                       href="alto-rendimiento.html"><span
-                            class="material-symbols-outlined text-[16px]">sports_esports</span> Alto Rendimiento</a>
-                    <a class="text-on-surface-variant hover:text-neon-magenta hover:bg-neon-magenta/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
-                       href="digitalizacion-marketing.html"><span class="material-symbols-outlined text-[16px]">storefront</span>
-                        Marketing PYMES</a>
-                    <a class="text-on-surface-variant hover:text-[#FFD700] hover:bg-[#FFD700]/10 px-4 py-3 rounded-lg transition-colors flex items-center gap-2 font-medium whitespace-nowrap"
-                       href="rrss-contenido.html"><span class="material-symbols-outlined text-[16px]">share</span>
-                        Gestión de Redes Sociales</a>
-                </div>
-            </div>
-
-            <a class="text-on-surface-variant hover:text-neon-cyan transition-colors duration-300 px-3 py-2 hover:bg-neon-cyan/10 rounded-lg font-medium whitespace-nowrap"
-               href="index.html#contacto-new">Contacto</a>
-        </nav>
-
-        <!-- Trailing Action -->
-        <div class="flex items-center gap-3">
-            <a href="static/CV_Carlos_Gutierrez_Toledo_2026.pdf" download="CV_Carlos_Gutierrez.pdf" target="_blank"
-               class="hidden md:flex items-center gap-2 px-5 py-2 border border-glass-border bg-surface-container-high/50 text-on-surface hover:text-neon-cyan hover:border-neon-cyan/50 font-label-mono text-[14px] font-bold rounded-lg shadow-[0_0_10px_rgba(0,243,255,0.1)] hover:shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all duration-300 whitespace-nowrap">
-                <span class="material-symbols-outlined text-[18px]">download</span> Descargar CV
+        <button class="navbar-toggler border-0" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Abrir menú">
+            <span class="material-symbols-outlined navbar-icon">menu</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mx-auto gap-1">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#quien-soy">Quién Soy</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#formacion">Formación</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#experiencia">Experiencia</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="index.html#portafolio"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item dropdown-item--cyan" href="soporte-tecnico-y-mantenimiento.html">🔧 Soporte Técnico</a></li>
+                        <li><a class="dropdown-item dropdown-item--green" href="alto-rendimiento.html">🎮 Alto Rendimiento</a></li>
+                        <li><a class="dropdown-item dropdown-item--magenta" href="digitalizacion-marketing.html">🛒 Marketing PYMES</a></li>
+                        <li><a class="dropdown-item dropdown-item--gold" href="rrss-contenido.html">📱 Redes Sociales</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contacto-new">Contacto</a></li>
+            </ul>
+            <a href="static/CV_Carlos_Gutierrez_Toledo_2026.pdf" download="CV_Carlos_Gutierrez.pdf"
+               target="_blank" class="btn-download-cv d-none d-md-flex">
+                <span class="material-symbols-outlined" style="font-size:18px;">download</span>
+                Descargar CV
             </a>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="lg:hidden text-neon-cyan p-2 hover:bg-neon-cyan/10 rounded-lg transition-colors">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
         </div>
     </div>
-</header>
-<main class="pt-24 pb-20">
+</nav>
+<main class="pt-20 pb-32">
     <!-- Hero Section with Context Image -->
     <section
-            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-32">
-        <div class="md:col-span-7 space-y-6 reveal-on-scroll opacity-0 translate-y-10">
+            class="max-w-container-max mx-auto py-10 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-32">
+        <div class="md:col-span-7 space-y-6 animate-on-scroll">
             <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-bright/50 border border-glass-border rounded-full font-label-mono text-xs text-neon-cyan">
                 <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
                 ESTRATEGIA DIGITAL AVANZADA
@@ -196,47 +176,41 @@
                 No solo buscamos likes; nos enfocamos en <span class="text-neon-cyan underline underline-offset-4">convertir seguidores en clientes</span>
                 reales mediante contenido de alto impacto visual.
             </p>
-            <div class="flex gap-4 pt-4">
-                <button class="bg-primary-fixed-dim text-on-primary px-8 py-4 rounded-lg flex items-center gap-2 font-bold hover:brightness-110 transition-all">
-                    Solicitar Auditoría
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </button>
-                <button class="border border-primary-fixed-dim/50 text-primary-fixed-dim px-8 py-4 rounded-lg hover:bg-primary-fixed-dim/10 transition-all">
-                    Ver Servicios
-                </button>
+            <div class="flex gap-3 mt-8">
+                <div class="glass-card flex flex-col items-center gap-2 px-4 py-4 rounded-xl border border-neon-cyan/20 hover:border-neon-cyan/50 hover:shadow-[0_0_20px_rgba(0,229,255,0.1)] transition-all flex-1 text-center">
+                    <span class="material-symbols-outlined text-neon-cyan text-[24px]" style="font-variation-settings:'FILL' 1;">add_circle</span>
+                    <span class="font-label-mono text-[11px] text-on-surface-variant leading-relaxed">Creamos tu perfil<br>desde cero</span>
+                </div>
+                <div class="glass-card flex flex-col items-center gap-2 px-4 py-4 rounded-xl border border-primary-fixed-dim/20 hover:border-primary-fixed-dim/50 hover:shadow-[0_0_20px_rgba(221,183,255,0.1)] transition-all flex-1 text-center">
+                    <span class="material-symbols-outlined text-primary-fixed-dim text-[24px]" style="font-variation-settings:'FILL' 1;">image</span>
+                    <span class="font-label-mono text-[11px] text-on-surface-variant leading-relaxed">Diseño de contenido<br>a tu imagen</span>
+                </div>
+                <div class="glass-card flex flex-col items-center gap-2 px-4 py-4 rounded-xl border border-neon-cyan/20 hover:border-neon-cyan/50 hover:shadow-[0_0_20px_rgba(0,229,255,0.1)] transition-all flex-1 text-center">
+                    <span class="material-symbols-outlined text-neon-cyan text-[24px]" style="font-variation-settings:'FILL' 1;">colors</span>
+                    <span class="font-label-mono text-[11px] text-on-surface-variant leading-relaxed">Paleta de colores<br>y tono de marca</span>
+                </div>
             </div>
         </div>
-        <div class="md:col-span-5 relative group reveal-on-scroll opacity-0 translate-y-10">
+        <div class="md:col-span-5 relative group animate-on-scroll">
             <div class="absolute -inset-4 bg-neon-cyan/10 rounded-xl blur-2xl group-hover:bg-neon-cyan/20 transition-all duration-500"></div>
             <div class="relative glass-card overflow-hidden rounded-xl aspect-[4/5] md:aspect-square">
                 <img alt="Social Media Management"
                      class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrTzjkYGrflIwLaTgx4c_F7FSiKAE5xUHuV7R0_ArwnZISTUBz4mlHrL4vGw5JImeByGzfFhPWxJH-SlipmkVucRTMWGF1VAgqXnKjEFoIt-EQevF4a7MVADydMrQVDly75VIe4_05RwdjrMJ9yPEnZrkFj2C_0qs_6-9psCgbE_nMpQH9yK0qv8jm5XUvWQ6R2WmfC-bZ3_JVnEmwSC2nAwCJh_0bz26ht_PUe6H2RPHwZaVXWdMduxcz1ow4tvV5fSDbGSbaxw">
             </div>
-            <!-- Float elements -->
-            <div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-lg hidden md:block">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-neon-magenta rounded-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white">trending_up</span>
-                    </div>
-                    <div>
-                        <p class="text-xs font-label-mono text-on-surface-variant">Growth Rate</p>
-                        <p class="text-lg font-bold">+245%</p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
     <!-- Bento Grid Services -->
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32">
-        <div class="text-center mb-16 reveal-on-scroll opacity-0 translate-y-10">
+        <div class="text-center mb-16 animate-on-scroll">
             <h2 class="font-headline-lg text-headline-lg mb-4">Nuestros Pilares de <span class="text-neon-cyan">Crecimiento</span>
             </h2>
             <p class="font-body-md text-on-surface-variant">Ingeniería visual aplicada al marketing de contenidos.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <!-- TikTok/Reels Strategy -->
-            <div class="md:col-span-2 glass-card p-8 rounded-xl flex flex-col justify-between h-[320px] opacity-0 translate-y-10">
+            <div class="md:col-span-2 glass-card p-8 rounded-xl flex flex-col justify-between h-[320px] animate-on-scroll">
                 <div>
                     <span class="material-symbols-outlined text-neon-cyan text-4xl mb-4">videocam</span>
                     <h3 class="font-headline-lg text-headline-lg-mobile mb-2">Estrategia TikTok &amp; Reels</h3>
@@ -249,21 +223,21 @@
                 </div>
             </div>
             <!-- Commercial Graphic Design -->
-            <div class="glass-card p-8 rounded-xl h-[320px] opacity-0 translate-y-10">
+            <div class="glass-card p-8 rounded-xl h-[320px] animate-on-scroll">
                 <span class="material-symbols-outlined text-neon-magenta text-4xl mb-4">polyline</span>
                 <h3 class="font-headline-lg text-headline-lg-mobile mb-2 leading-tight">Diseño Gráfico Comercial</h3>
                 <p class="text-on-surface-variant text-sm">Visuales de alta conversión para feeds, stories y publicidad
                     pagada.</p>
             </div>
             <!-- Community Management -->
-            <div class="glass-card p-8 rounded-xl h-[320px] opacity-0 translate-y-10">
+            <div class="glass-card p-8 rounded-xl h-[320px] animate-on-scroll">
                 <span class="material-symbols-outlined text-secondary text-4xl mb-4">group</span>
                 <h3 class="font-headline-lg text-headline-lg-mobile mb-2 leading-tight">Community Management</h3>
                 <p class="text-on-surface-variant text-sm">Gestión activa de comunidades y moderación con enfoque en
                     ventas.</p>
             </div>
             <!-- Retainer Model -->
-            <div class="md:col-span-2 glass-card p-8 rounded-xl bg-primary-fixed-dim/5 border-primary-fixed-dim/30 opacity-0 translate-y-10">
+            <div class="md:col-span-2 glass-card p-8 rounded-xl bg-primary-fixed-dim/5 border-primary-fixed-dim/30 animate-on-scroll">
                 <div class="flex items-start justify-between">
                     <div>
                         <h3 class="font-headline-lg text-headline-lg-mobile mb-2">Modelos de Retainer Mensual</h3>
@@ -355,14 +329,16 @@
                 potencial de crecimiento de tu marca.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <button class="bg-primary-fixed-dim text-on-primary px-10 py-5 rounded-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3">
-                    <span class="material-symbols-outlined">mail</span>
-                    Enviar Mensaje Directo
-                </button>
-                <button class="bg-surface-bright/50 border border-glass-border text-white px-10 py-5 rounded-lg hover:bg-surface-bright transition-colors flex items-center justify-center gap-3">
-                    <span class="material-symbols-outlined">phone_iphone</span>
-                    WhatsApp Business
-                </button>
+                <a href="https://forms.gle/GGprUJrVVp9rfEHU9" target="_blank" rel="noopener"
+                   class="bg-primary-fixed-dim text-on-primary px-10 py-4 rounded font-label-mono flex items-center gap-3 hover:scale-105 hover:shadow-[0_0_25px_rgba(221,183,255,0.4)] transition-all shadow-lg shadow-primary-fixed-dim/20">
+                    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">trending_up</span>
+                    Quiero crecer en redes
+                </a>
+                <a href="tel:+56977608614"
+                   class="border border-neon-cyan/40 bg-neon-cyan/10 text-neon-cyan px-10 py-4 rounded font-label-mono flex items-center gap-3 hover:bg-neon-cyan/20 hover:border-neon-cyan/70 transition-all">
+                    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">call</span>
+                    Llamar ahora
+                </a>
             </div>
         </div>
     </section>
@@ -374,67 +350,43 @@
         class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span><span
         class="font-label-mono uppercase tracking-widest text-sm">Volver a Servicios</span></a></div>
 </div>
-<footer class="bg-surface-container-lowest border-t border-glass-border">
-    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center px-4 md:px-margin-desktop py-12 max-w-[1600px] mx-auto gap-4">
+<footer class="site-footer" role="contentinfo">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-8 py-8 px-6 lg:pl-10 lg:pr-[96px] w-full max-w-full mx-auto">
 
-        <div class="flex flex-row items-center gap-4 justify-self-start">
-            <span class="font-headline-lg text-headline-lg gradient-text whitespace-nowrap">Soporte TI</span>
-            <div class="flex gap-2">
-                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
-                    <span class="material-symbols-outlined text-xs">verified</span>Certificado por GOOGLE
+        <div class="flex flex-col xl:flex-row items-center xl:items-start gap-4 justify-self-center lg:justify-self-start">
+            <span class="font-headline-xl text-[28px] font-bold gradient-text whitespace-nowrap">DigiNucleo</span>
+            <div class="flex gap-2 flex-wrap justify-center">
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded font-label-mono text-[10px] text-on-surface-variant">
+                    <span class="material-symbols-outlined text-xs">verified</span>Certificado GOOGLE
                 </div>
-                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded text-[10px] font-label-mono">
-                    <span class="material-symbols-outlined text-xs">school</span>Certificado por SENCE
+                <div class="flex items-center gap-1 border border-glass-border px-2 py-1 rounded font-label-mono text-[10px] text-on-surface-variant">
+                    <span class="material-symbols-outlined text-xs">school</span>Certificado SENCE
                 </div>
             </div>
         </div>
 
-        <div class="text-center font-body-md text-on-surface-variant opacity-60 justify-self-center order-3 md:order-2 whitespace-nowrap">
-            © 2026
+        <p class="font-body-md text-on-surface-variant opacity-60 text-center whitespace-nowrap justify-self-center">
+            © 2026 Carlos Gutierrez Toledo
+        </p>
+
+        <div class="grid grid-cols-2 gap-x-4 gap-y-4 lg:flex lg:flex-row lg:items-center lg:gap-4 xl:gap-6 justify-self-center lg:justify-self-end lg:flex-nowrap lg:whitespace-nowrap w-full sm:w-auto mt-4 lg:mt-0">
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-all flex items-center gap-2 font-label-mono text-[13px] md:text-[14px] justify-self-start lg:justify-self-auto" href="https://www.linkedin.com/in/carlosgutierreztoledo/" target="_blank" rel="noopener">
+                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="LinkedIn" class="w-5 h-5" aria-hidden="true">LinkedIn
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2 font-label-mono text-[13px] md:text-[14px] justify-self-start lg:justify-self-auto" href="https://www.youtube.com/@diginucleo" target="_blank" rel="noopener">
+                <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="YouTube" class="w-5 h-5" aria-hidden="true">YouTube
+            </a>
+            <a class="text-on-surface-variant hover:text-primary transition-all flex items-center gap-2 font-label-mono text-[13px] md:text-[14px] justify-self-start lg:justify-self-auto" href="https://www.instagram.com/Diginucleo" target="_blank" rel="noopener">
+                <img src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" class="w-5 h-5" aria-hidden="true">Instagram
+            </a>
+            <a class="text-on-surface-variant hover:text-neon-cyan transition-all flex items-center gap-2 font-label-mono text-[13px] md:text-[14px] justify-self-start lg:justify-self-auto" href="mailto:carlosgutitoledo@gmail.com">
+                <img src="https://api.iconify.design/skill-icons:gmail-light.svg" alt="Email" class="w-5 h-5" aria-hidden="true">Email
+            </a>
         </div>
 
-        <div class="flex items-center gap-6 font-body-md justify-self-end order-2 md:order-3">
-            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
-               href="https://www.linkedin.com/in/carlosgutierreztoledo/" target="_blank">
-                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="LinkedIn" class="w-5 h-5"/>LinkedIn
-            </a>
-            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
-               href="https://www.youtube.com/@diginucleo" target="_blank">
-                <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="YouTube" class="w-5 h-5"/>YouTube
-            </a>
-            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
-               href="https://www.instagram.com/Diginucleo" target="_blank">
-                <img src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram" class="w-5 h-5"/>Instagram
-            </a>
-            <a class="text-on-surface-variant hover:text-neon-magenta transition-all flex items-center gap-2"
-               href="mailto:carlosgutitoledo@gmail.com">
-                <img src="https://api.iconify.design/skill-icons:gmail-light.svg" alt="Email" class="w-5 h-5"/>Email
-            </a>
-        </div>
     </div>
 </footer>
-
-<script>
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('opacity-100', 'translate-y-0');
-                entry.target.classList.remove('opacity-0', 'translate-y-10');
-            }
-        });
-    }, observerOptions);
-
-    // Selector dual: monitorea tarjetas y contenedores de texto marcados
-    document.querySelectorAll('.glass-card, .reveal-on-scroll').forEach(element => {
-        element.classList.add('transition-all', 'duration-700');
-        observer.observe(element);
-    });
-</script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="static/js/script.js"></script>
 </body>
 </html>
